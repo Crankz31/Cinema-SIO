@@ -46,7 +46,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>       	
 
 		       </fieldset>
-           <CENTER<
+
 			    </form>
             <div class="clear"></div>
 
@@ -63,8 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  			<div class="clear"></div>
    		</div>
     </div>
-     			</CENTER>
-   	
+	<div class="clear"></div>
 </div>
 <script>
 function myFunction() {

@@ -18,8 +18,8 @@ else
     $_SESSION['error']="Payment Failed";
 }
 ?>
-<body><table align='center'><tr><td><STRONG>Transaction is being processed,</STRONG></td></tr><tr><td><font color='blue'>Please wait <i class="fa fa-spinner fa-pulse fa-fw"></i>
-<span class="sr-only"></font></td></tr><tr><td>(Please do not press 'Refresh' or 'Back' button )</td></tr></table><h2>
+<body><table align='center'><tr><td><STRONG>Transaction en cours,</STRONG></td></tr><tr><td><font color='blue'>Patientez SVP <i class="fa fa-spinner fa-pulse fa-fw"></i>
+<span class="sr-only"></font></td></tr><tr><td>(N'appuyez pas sur le bouton retour ni rafraichir ! )</td></tr></table><h2>
 <script>
     setTimeout(function(){ window.location="profile.php"; }, 5000);
 </script>

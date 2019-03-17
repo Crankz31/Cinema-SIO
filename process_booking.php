@@ -16,20 +16,20 @@ if(!isset($_SESSION['user']))
 <div class="content">
 	<div class="wrap">
 		<div class="content-top">
-			<h3>Payment</h3>
+			<h3>Paiement</h3>
 			<form action="bank.php" method="post" id="form1">
 			<div class="col-md-4 col-md-offset-4" style="margin-bottom:50px">
 			<div class="form-group">
-   <label class="control-label">Name on Card</label>
+   <label class="control-label">Nom de paiement</label>
     <input type="text" class="form-control" name="name">
 </div>
 <div class="form-group">
-   <label class="control-label">Card Number</label>
+   <label class="control-label">Numéro de carte</label>
     <input type="text" class="form-control" name="number" required title="Enter 16 digit card number">
   
 </div>      
 <div class="form-group">
-   <label class="control-label">Expiration date</label>
+   <label class="control-label">Date d'expiration</label>
     <input type="date" class="form-control" name="date">
 </div>
 <div class="form-group">
@@ -37,7 +37,7 @@ if(!isset($_SESSION['user']))
     <input type="text" class="form-control" name="cvv">
 </div>
 <div class="form-group">
-    <button class="btn btn-success">Make Payment</button>
+    <button class="btn btn-success">Proceder au paiement</button>
     </form>
 </div>
 </div>
@@ -65,39 +65,39 @@ if(!isset($_SESSION['user']))
             name: {
             verbose: false,
                 validators: {notEmpty: {
-                        message: 'The Name is required and can\'t be empty'
+                        message: 'Votre nom est obligatoire.'
                     },regexp: {
                         regexp: /^[a-zA-Z ]+$/,
-                        message: 'The Name can only consist of alphabets'
+                        message: 'Votre nom ne doit uniquement contenir des lettres'
                     } } },
             number: {
             verbose: false,
                 validators: {notEmpty: {
-                        message: 'The Card Number is required and can\'t be empty'
+                        message: 'Votre numéro de carte est obligatoire.'
                     },stringLength: {
                     min: 16,
                     max: 16,
-                    message: 'The Card Number must 16 characters long'
+                    message: 'Votre numero de carte doit contenir 16 chiffres'
                 },regexp: {
                         regexp: /^[0-9 ]+$/,
-                        message: 'Enter a valid Card Number'
+                        message: 'Entrez un numero de carte valide'
                     } } },
             date: {
             verbose: false,
                 validators: {notEmpty: {
-                        message: 'The Expire Date is required and can\'t be empty'
+                        message: 'La date d\'expiration est obligatoire.' 
                     } } },
             cvv: {
             verbose: false,
                 validators: {notEmpty: {
-                        message: 'The cvv is required and can\'t be empty'
+                        message: 'Le CVV est obligatoire'
                     },stringLength: {
                     min: 3,
                     max: 3,
-                    message: 'The cvv must 3 characters long'
+                    message: 'Le CVV doit contenir 3 chiffres.'
                 },regexp: {
                         regexp: /^[0-9 ]+$/,
-                        message: 'Enter a valid cvv'
+                        message: 'Entrez un CVV valide.'
                     } } }}
             });
             });

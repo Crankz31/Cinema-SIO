@@ -42,7 +42,7 @@ if(!isset($_SESSION['user']))
 										</tr>
 										<tr>
 											<td>
-												Screen
+												Salle
 											</td>
 										<td>
 											<?php 
@@ -94,15 +94,15 @@ if(!isset($_SESSION['user']))
 									</tr>
 									<tr>
 										<td>
-											Show Time
+											Date du film
 										</td>
 										<td>
-											<?php echo date('h:i A',strtotime($ttme['start_time']))." ".$ttme['name'];?> Show
+											<?php echo date('h:i A',strtotime($ttme['start_time']))." ".$ttme['name'];?> Voir
 										</td>
 									</tr>
 									<tr>
 										<td>
-											Number of Seats
+											Nombre de places
 										</td>
 										<td>
 											<form  action="process_booking.php" method="post">
@@ -114,15 +114,15 @@ if(!isset($_SESSION['user']))
 									</tr>
 									<tr>
 										<td>
-											Amount
+											Montant
 										</td>
 										<td id="amount" style="font-weight:bold;font-size:18px">
-											Rs <?php echo $screen['charge'];?>
+											 <?php echo $screen['charge'];?>&nbsp;€
 										</td>
 									</tr>
 									<tr>
-										<td colspan="2"><?php if($avl[0]==$screen['seats']){?><button type="button" class="btn btn-danger" style="width:100%">House Full</button><?php } else { ?>
-										<button class="btn btn-info" style="width:100%">Book Now</button>
+										<td colspan="2"><?php if($avl[0]==$screen['seats']){?><button type="button" class="btn btn-danger" style="width:100%">La salle est pleine</button><?php } else { ?>
+										<button class="btn btn-info" style="width:100%">Réservez maintenant </button>
 										<?php } ?>
 										</form></td>
 									</tr>
