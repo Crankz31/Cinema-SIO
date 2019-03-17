@@ -8,7 +8,7 @@ include('header.php');
 	<div class="wrap">
 		<div class="content-top">
 				<div class="listview_1_of_3 images_1_of_3">
-					<h3>Prochaines sorties</h3>
+					<h3>Prochaines sorties dans votre cinéma</h3>
 					<?php 
 					$qry3=mysqli_query($con,"select * from tbl_news");
 					
@@ -64,4 +64,3 @@ include('header.php');
 </div>
 <?php include('footer.php');?>
 </div>
-<?php include('searchbar.php');?>
