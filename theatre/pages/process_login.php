@@ -14,14 +14,14 @@ if(mysqli_num_rows($qry))
 	}
 	else
 	{
-		$_SESSION['error']="Login Failed!";
+		$_SESSION['error']="Echec d'authentification!";
 		header("location:../index.php");
 	}
 	
 }
 else
 {
-	$_SESSION['error']="Login Failed!";
+	$_SESSION['error']="Echec d'authentification!";
 	header("location:../index.php");
 }
 ?>

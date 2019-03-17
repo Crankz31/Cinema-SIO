@@ -126,7 +126,7 @@ class formBuilder
                     $err_msg="Enter a valid $label";
                     break;
                 case "pin":
-                    $expression='/^[1-9][0-9]{5}$/';
+                    $expression='/^[1-9][0-9]{4}$/';
                     $err_msg="Enter a valid $label";
                     break;
                 case "mobile":
