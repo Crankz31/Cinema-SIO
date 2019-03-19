@@ -3,8 +3,8 @@ if(!isset($_SESSION['user']))
 {
 	header('location:login.php');
 }
-	$qry2=mysqli_query($con,"select * from tbl_movie where movie_id='".$_SESSION['movie']."'");
-	$movie=mysqli_fetch_array($qry2);
+	//$qry2=mysqli_query($con,"select * from tbl_movie where movie_id='".$_SESSION['movie']."'");
+	//$movie=mysqli_fetch_array($qry2);
 	?>
 <div class="content">
 	<div class="wrap">
