@@ -19,7 +19,7 @@ include('header.php');
         Ajouter un nouveau film
       </h1>
       <?php
-      if($_SESSION['add'])
+      if($_SESSION['add'] == 11111)
       {?>
       <div class="alert alert-success">
   <strong>Succes!</strong> Ajout réalisé avec succès ..

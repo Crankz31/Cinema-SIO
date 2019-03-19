@@ -5,4 +5,4 @@ the code of the website is PHP,HTML,CSS,JS and some framework like boostrap
 
 # ADMIN
 This section is composed with AdminLTE this is an open source admin dashboard & control panel theme built with boostrap.
-So this section allows them to manage new movies and available rooms
+So this section allows managers to manage new movies and available rooms
