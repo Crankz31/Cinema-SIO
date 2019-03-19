@@ -27,12 +27,12 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a>Back-end Cinéma<b> &nbsp; Admin </b></a>
+    <a>GOMB Assistant<b> &nbsp; Admin </b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <?php session_start(); include('../msgbox.php');?>
-    <p class="login-box-msg">Connectez-vous.</p>
+    <p class="login-box-msg">Connectez-vous pour commencer</p>
 <form action="pages/process_login.php" method="post">
       <div class="form-group has-feedback">
         <input name="Email" type="text" size="25" placeholder="Email" class="form-control" placeholder="Email"/>
@@ -43,7 +43,7 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group">
-          <button type="submit" class="btn btn-primary">Connexion </button>
+          <button type="submit" class="btn btn-primary">Connexion</button>
       </div>
     </form>
 
