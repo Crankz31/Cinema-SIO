@@ -27,7 +27,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a>Back-end Cinéma<b> &nbsp; Admin </b></a>
+    <a>Back-end <b> &nbsp; Admin </b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -39,7 +39,7 @@
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input name="Password" type="password" size="25" placeholder="Password" class="form-control" placeholder="Password" />
+        <input name="Password" type="password" size="25" placeholder="Password" class="form-control" placeholder="Mot de passe" />
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group">
