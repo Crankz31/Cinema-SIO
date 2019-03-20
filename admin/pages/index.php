@@ -8,11 +8,11 @@ include('header.php');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Movies List
+        Liste des films
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Movies List</li>
+        <li><a href="index"><i class="fa fa-dashboard"></i> Accueil</a></li>
+        <li class="active">Liste des films</li>
       </ol>
     </section>
 
@@ -71,7 +71,7 @@ include('footer.php');
 <script>
 function del(m)
     {
-        if (confirm("Are you want to delete this movie") == true) 
+        if (confirm("Etes vous sur de vouloir supprimer ce film?") == true) 
         {
             window.location="process_delete_movie.php?mid="+m;
         } 

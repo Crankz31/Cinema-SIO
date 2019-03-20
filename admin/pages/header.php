@@ -49,7 +49,7 @@ include('../../config.php');
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b></span>
+      <span class="logo-lg"><b>Panel-admin</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -105,7 +105,7 @@ include('../../config.php');
         </div>
         <div class="pull-left info">
           <p>Admin</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i> En ligne</a>
         </div>
       </div>
       
@@ -123,7 +123,7 @@ include('../../config.php');
         
           <li class="treeview">
           <a href="add_theatre.php">
-            <i class="fa fa-plus"></i> <span>Add Theatre</span>
+            <i class="fa fa-plus"></i> <span>Ajouter un cinéma</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -131,7 +131,7 @@ include('../../config.php');
         </li>
         <li class="treeview">
           <a href="add_movie_news.php">
-            <i class="fa fa-plus"></i> <span>Add Movie News</span>
+            <i class="fa fa-plus"></i> <span>Ajouter un films a l'affiche</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

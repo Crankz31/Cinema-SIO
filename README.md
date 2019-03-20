@@ -1,13 +1,8 @@
 # Cinema-SIO
-#PRESENTATION
-This project is for our final exams, this site is about a Cinema and you can reserved your seat and your session online
-The code is in PHP, HTML, CSS, JS.
+this project is for our final exam of BTS 
+it is a website for a chain of cinema and customers can reserved their seat online
+the code of the website is PHP,HTML,CSS,JS and some framework like boostrap
 
-#FRONT
-
-#CINEMA
-
-#ADMIN
--   Include the template AdminLTE 
-it is a dashboard and a control panel theme.
-This section is for the managers of the cinema and serves them to control the films with the poster and the rooms available.
+# ADMIN
+This section is composed with AdminLTE this is an open source admin dashboard & control panel theme built with boostrap.
+So this section allows managers to manage new movies and available rooms
