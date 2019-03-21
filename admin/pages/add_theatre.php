@@ -47,7 +47,7 @@ include('header.php');
               </div>
               <div class="form-group">
                  <label class="control-label">Département</label>
-                <input type="text" name="state" id="administrative_area_level_1" s placeholder="Département" class="form-control">
+                <input type="text" name="state" id="administrative_area_level_1" placeholder="Département" class="form-control">
                 <?php $frm->validate("state",array("required","label"=>"State")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
