@@ -35,7 +35,7 @@ include('header.php');
             <div class="form-group">
               <label class="control-label">Choisir un spectacle</label>
               <select name="movie" class="form-control">
-                <option value>Selectionner un film</option>
+                <option value>Selectionner un spectacle</option>
                 <?php
                   $mv=mysqli_query($con,"select * from tbl_movie where status='0'");
                   while($movie=mysqli_fetch_array($mv))
@@ -67,7 +67,7 @@ include('header.php');
             <div class="form-group">
               <label class="control-label">Choisir la durée du spectacle</label>
               <select name="stime[]" class="form-control" id="stime" multiple>
-                <option value="0">Selectionner une durée du spectancle</option>
+                <option value="0">Selectionner une durée du spectacle</option>
               </select>
               
             </div>

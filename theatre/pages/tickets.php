@@ -16,11 +16,11 @@ include('header.php');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Todays Bookings
+        Reservations du jour
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active">Todays Bookings</li>
+        <li><a href="index.php"><i class="fa fa-home"></i> Accueil</a></li>
+        <li class="active">Reservations du jour</li>
       </ol>
     </section>
 
@@ -33,9 +33,9 @@ include('header.php');
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="form-group col-md-6">
-                <label class="control-label">Select Screen</label>
+                <label class="control-label">Choisir une salle</label>
                 <select class="form-control" id="screen">
-                  <option value="0">Select Screen</option>
+                  <option value="0">Selectionner une salle</option>
                   <?php
                   $q=mysqli_query($con,"select  * from tbl_screens where t_id='".$_SESSION['theatre']."'");
                   while($th=mysqli_fetch_array($q))
@@ -48,9 +48,9 @@ include('header.php');
                 </select>
               </div>
               <div class="form-group col-md-6">
-                <label class="control-label">Select Show</label>
+                <label class="control-label">Choisir un spectable</label>
                 <select class="form-control" id="show">
-                  <option value="0">Select Screen</option>
+                  <option value="0">Choisir une salle</option>
                   
                 </select>
               </div>
@@ -84,7 +84,7 @@ include('footer.php');
 			$('#show').html(data);    
 		})
 		.fail(function(){
-			$('#screendtls').html('<i class="glyphicon glyphicon-info-sign"></i> Something went wrong, Please try again...');
+			$('#screendtls').html('<i class="glyphicon glyphicon-info-sign"></i> Quelque chose n\'a pas m\'arché. Réessayez...');
 		  });
 		  
   });
@@ -101,7 +101,7 @@ include('footer.php');
 			$('#disp').html(data);    
 		})
 		.fail(function(){
-			$('#screendtls').html('<i class="glyphicon glyphicon-info-sign"></i> Something went wrong, Please try again...');
+			$('#screendtls').html('<i class="glyphicon glyphicon-info-sign"></i> Quelque chose n\'a pas m\'arché. Réessayez...');
 		  });
   });
 </script>
