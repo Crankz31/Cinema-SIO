@@ -149,7 +149,7 @@ $theatre=mysqli_fetch_array($th);
         </li>
         <li class="treeview">
           <a href="tickets.php">
-            <i class="fa fa-film"></i> <span>Spectacles du jours</span>
+            <i class="fa fa-film"></i> <span>Séances du jours</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

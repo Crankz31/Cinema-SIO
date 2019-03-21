@@ -48,9 +48,9 @@ include('header.php');
                 </select>
               </div>
               <div class="form-group col-md-6">
-                <label class="control-label">Choisir un spectable</label>
+                <label class="control-label">Choisir un film</label>
                 <select class="form-control" id="show">
-                  <option value="0">Choisir une salle</option>
+                  <option value="0">Choisir une film</option>
                   
                 </select>
               </div>
