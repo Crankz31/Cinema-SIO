@@ -133,7 +133,7 @@ $theatre=mysqli_fetch_array($th);
         </li>
         <li class="treeview">
           <a href="add_show.php">
-            <i class="fa fa-ticket"></i> <span>Ajouter un specatacle</span>
+            <i class="fa fa-ticket"></i> <span>Ajouter une séance</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
