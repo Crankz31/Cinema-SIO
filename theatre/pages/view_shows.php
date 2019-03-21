@@ -31,16 +31,16 @@ include('header.php');
           {?>
             <table class="table">
               <th class="col-md-1">
-                Sl.no
+               Séance num
               </th>
               <th class="col-md-2">
-                Screen
+                Salle
               </th>
               <th class="col-md-3">
-                Show Time
+              Temps du film
               </th>
               <th class="col-md-3">
-                Movie
+                Film
               </th>
               <th class="col-md-3">
                 Options
