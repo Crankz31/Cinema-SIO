@@ -8,11 +8,11 @@ include('header.php');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-      Films du jours
+        Films du jour
       </h1>
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-home"></i> Accueil</a></li>
-        <li class="active">Films du jours</li>
+        <li class="active">Films du jour</li>
       </ol>
     </section>
 
@@ -31,16 +31,16 @@ include('header.php');
           {?>
             <table class="table">
               <th class="col-md-1">
-                Séance num
+                Num salle
               </th>
               <th class="col-md-2">
-                Salle
+                Nom de la salle
               </th>
               <th class="col-md-3">
-                Temps du film
+                Durée du film
               </th>
               <th class="col-md-3">
-                Film
+                Nom du film
               </th>
               <?php
               $sl=1;
@@ -78,7 +78,7 @@ include('header.php');
           else
           {
             ?>
-            <h3>Il n'y a pas de films.</h3>
+            <h3>Pas de films ajoutés.</h3>
             <?php
           }
           ?>
