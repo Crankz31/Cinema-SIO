@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Theatre Assistant| Admin</title>
+  <title>GOMB Assistant| Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -27,23 +27,23 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a>Theatre Assistant<b> &nbsp; Admin </b></a>
+    <a>GOMB Assistant<b> &nbsp; Admin </b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <?php session_start(); include('../msgbox.php');?>
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">Connectez-vous pour commencer</p>
 <form action="pages/process_login.php" method="post">
       <div class="form-group has-feedback">
         <input name="Email" type="text" size="25" placeholder="Email" class="form-control" placeholder="Email"/>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input name="Password" type="password" size="25" placeholder="Password" class="form-control" placeholder="Password" />
+        <input name="Password" type="password" size="25" placeholder="Password" class="form-control" placeholder="Mot de passe" />
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group">
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary">Connexion</button>
       </div>
     </form>
 

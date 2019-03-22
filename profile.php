@@ -3,15 +3,15 @@ if(!isset($_SESSION['user']))
 {
 	header('location:login.php');
 }
-	$qry2=mysqli_query($con,"select * from tbl_movie where movie_id='".$_SESSION['movie']."'");
-	$movie=mysqli_fetch_array($qry2);
+	//$qry2=mysqli_query($con,"select * from tbl_movie where movie_id='".$_SESSION['movie']."'");
+	//$movie=mysqli_fetch_array($qry2);
 	?>
 <div class="content">
 	<div class="wrap">
 		<div class="content-top">
 				<div class="section group">
 					<div class="about span_1_of_2">	
-						<h3>BOOKINGS</h3>
+						<h3>Réservations</h3>
 						<?php include('msgbox.php');?>
 						<?php
 				$bk=mysqli_query($con,"select * from tbl_bookings where user_id='".$_SESSION['user']."'");
@@ -20,13 +20,13 @@ if(!isset($_SESSION['user']))
 					?>
 					<table class="table table-bordered">
 						<thead>
-						<th>Booking Id</th>
-						<th>Movie</th>
-						<th>Theatre</th>
-						<th>Screen</th>
-						<th>Show</th>
-						<th>Seats</th>
-						<th>Amount</th>
+						<th>Reservation n°</th>
+						<th>Film</th>
+						<th>Cinéma</th>
+						<th>Salle</th>
+						<th>Heure</th>
+						<th>Nb de siège</th>
+						<th>Montant</th>
 						<th></th>
 						</thead>
 						<tbody>

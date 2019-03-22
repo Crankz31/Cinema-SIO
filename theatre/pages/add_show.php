@@ -16,11 +16,11 @@ include('header.php');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Add Show
+        Ajouter un spectacle
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active">Add Show</li>
+        <li><a href="index.php"><i class="fa fa-home"></i> Accueil</a></li>
+        <li class="active">Ajouter un spectacle</li>
       </ol>
     </section>
 
@@ -33,9 +33,9 @@ include('header.php');
           <?php include('../../msgbox.php');?>
           <form action="process_addshow.php" method="post" id="form1">
             <div class="form-group">
-              <label class="control-label">Select Movie</label>
+              <label class="control-label">Choisir un spectacle</label>
               <select name="movie" class="form-control">
-                <option value>Select Movie</option>
+                <option value>Selectionner un film</option>
                 <?php
                   $mv=mysqli_query($con,"select * from tbl_movie where status='0'");
                   while($movie=mysqli_fetch_array($mv))
@@ -49,9 +49,9 @@ include('header.php');
               <?php $frm->validate("movie",array("required","label"=>"Movie")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
-              <label class="control-label">Select Screen</label>
+              <label class="control-label">Choisir une salle</label>
               <select name="screen" class="form-control" id="screen">
-                <option value>Select Screen</option>
+                <option value>Selectionner une salle</option>
                 <?php
                   $sc=mysqli_query($con,"select * from tbl_screens where t_id='".$_SESSION['theatre']."'");
                   while($screen=mysqli_fetch_array($sc))
@@ -65,19 +65,19 @@ include('header.php');
               <?php $frm->validate("screen",array("required","label"=>"Screen")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
-              <label class="control-label">Select Show Times</label>
+              <label class="control-label">Choisir la durée du spectacle</label>
               <select name="stime[]" class="form-control" id="stime" multiple>
-                <option value="0">Select Show Times</option>
+                <option value="0">Selectionner une durée du spectancle</option>
               </select>
               
             </div>
             <div class="form-group">
-              <label class="control-label">Start Date</label>
+              <label class="control-label">Date de début</label>
               <input type="date" name="sdate" class="form-control"/>
-              <?php $frm->validate("sdate",array("required","label"=>"Start Date")); // Validating form using form builder written in form.php ?>
+              <?php $frm->validate("sdate",array("required","label"=>"Date de début")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
-              <button class="btn btn-success">Add Show</button>
+              <button class="btn btn-success">Ajouter</button>
             </div>
           </form>
         </div> 

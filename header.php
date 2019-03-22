@@ -30,8 +30,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="wrap">
 			<div class="h-logo">
 			<a href="index.php"><img src="images/logo.png" alt=""/></a>
+
 		</div>
 			  <div class="nav-wrap">
+
+
+        <form action="process_search.php" id="reservation-form" method="post" onsubmit="myFunction()">
+		       <fieldset>
+		       	<div class="field" >
+		       	
+		       		     
+                                <input type="text" placeholder="Chercher un film..." style="height:27px;width:500px"  required id="search111" name="search"> 
+                                
+                                <input type="submit" value="Search" style="height:28px;padding-top:4px" id="button111">
+    </div>       	
+
+		       </fieldset>
+
+			    </form>
+            <div class="clear"></div>
+
+
+			  
 					<ul class="group" id="example-one">
 			           <li><a href="index.php">Accueil</a></li>
 			  		   <li><a href="movies_events.php">Films à l'affiche</a></li>
@@ -43,25 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  			<div class="clear"></div>
    		</div>
     </div>
-     			<div class="clear"></div>
-   	
-<div class="block">
-	<div class="wrap">
-		
-        <form action="process_search.php" id="reservation-form" method="post" onsubmit="myFunction()">
-		       <fieldset>
-		       	<div class="field" >
-		       	
-		       		     
-                                <input type="text" placeholder="Search Movies Here..." style="height:27px;width:500px"  required id="search111" name="search">
-                                
-                                <input type="submit" value="Search" style="height:28px;padding-top:4px" id="button111">
-    </div>       	
-
-		       </fieldset>
-            </form>
-            <div class="clear"></div>
-   </div>
+	<div class="clear"></div>
 </div>
 <script>
 function myFunction() {

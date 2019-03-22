@@ -16,11 +16,11 @@ include('header.php');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Add Movie
+        Ajouter un film
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active">Add Movie</li>
+        <li><a href="index.php"><i class="fa fa-home"></i> Accueil</a></li>
+        <li class="active">Ajouter un film</li>
       </ol>
     </section>
 
@@ -33,14 +33,14 @@ include('header.php');
           <?php include('../../msgbox.php');?>
           <form action="process_add_movie.php" method="post" enctype="multipart/form-data" id="form1">
             <div class="form-group">
-              <label class="control-label">Movie Name</label>
+              <label class="control-label">Nom du film</label>
               <input type="text" name="name" class="form-control"/>
-              <?php $frm->validate("name",array("required","label"=>"Movie Name")); // Validating form using form builder written in form.php ?>
+              <?php $frm->validate("name",array("required","label"=>"Nom du film")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
-              <label class="control-label">Cast</label>
+              <label class="control-label">Acteurs</label>
               <input type="text" name="cast" class="form-control"/>
-              <?php $frm->validate("cast",array("required","label"=>"Cast","regexp"=>"text")); // Validating form using form builder written in form.php ?>
+              <?php $frm->validate("cast",array("required","label"=>"Acteurs","regexp"=>"text")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
               <label class="control-label">Description</label>
@@ -48,9 +48,9 @@ include('header.php');
               <?php $frm->validate("desc",array("required","label"=>"Description")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
-              <label class="control-label">Release Date</label>
+              <label class="control-label">Date de sortie</label>
               <input type="date" name="rdate" class="form-control"/>
-              <?php $frm->validate("rdate",array("required","label"=>"Release Date")); // Validating form using form builder written in form.php ?>
+              <?php $frm->validate("rdate",array("required","label"=>"Date de sortie")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
               <label class="control-label">Image</label>
@@ -58,12 +58,12 @@ include('header.php');
               <?php $frm->validate("image",array("required","label"=>"Image")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
-              <label class="control-label">Trailer Youtube Link</label>
+              <label class="control-label">URL bande annonce</label>
               <input type="text" name="video" class="form-control"/>
               <?php $frm->validate("video",array("label"=>"Image","max"=>"500")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-success">Add Movie</button>
+              <button type="submit" class="btn btn-success">Ajouter</button>
             </div>
           </form>
         </div> 

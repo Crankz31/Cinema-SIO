@@ -15,11 +15,11 @@ include('header.php');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Add Theatre
+        Ajouter un cinéma
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active">Add Theatre</li>
+        <li><a href="index.php"><i class="fa fa-home"></i> Accueil</a></li>
+        <li class="active">Ajouter un cinéma</li>
       </ol>
     </section>
 
@@ -31,33 +31,33 @@ include('header.php');
         <div class="box-body">
             <form action="process_add_theater.php" method="post" id="form1">
               <div class="form-group">
-                <label class="control-label">Name</label>
+                <label class="control-label">Nom</label>
                 <input type="text" name="name" class="form-control"/>
                 <?php $frm->validate("name",array("required","label"=>"Theatre Name")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
-                <label class="control-label">Address</label>
+                <label class="control-label">Adresse</label>
                 <input type="text" name="address" class="form-control"/>
                 <?php $frm->validate("address",array("required","label"=>"Theatre Address")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
-                <label class="control-label">Place</label>
+                <label class="control-label">Ville</label>
                 <input type="text" name="place" id="autocomplete" onFocus="geolocate()" class="form-control">
                 <?php $frm->validate("place",array("required","label"=>"Place")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
-                 <label class="control-label">State</label>
-                <input type="text" name="state" id="administrative_area_level_1" s placeholder="State" class="form-control">
+                 <label class="control-label">Département</label>
+                <input type="text" name="state" id="administrative_area_level_1" placeholder="Département" class="form-control">
                 <?php $frm->validate("state",array("required","label"=>"State")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
-                <label class="control-label">Pin Code</label>
-                 <input type="text" name="pin" id="postal_code"s placeholder="Zip code" class="form-control">
+                <label class="control-label">Code postal</label>
+                 <input type="text" name="pin" id="postal_code"s placeholder="Code postal" class="form-control">
                  <?php $frm->validate("pin",array("required","label"=>"Pin Code","regexp"=>"pin")); // Validating form using form builder written in form.php ?>
               </div>
               <?php
                 start:
-                $username="USR".rand(123456,999999);
+                $username="GOMB_".rand(123456,999999);
                 $u=mysqli_query($con,"select * from tbl_login where username='$username'");
                 if(mysqli_num_rows($u))
                 {
@@ -65,17 +65,17 @@ include('header.php');
                 }
               ?>
               <div class="form-group">
-                <label class="control-label">Username</label>
+                <label class="control-label">ID du compte cinéma</label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username ?>">
                 <?php $frm->validate("username",array("required","label"=>"Username")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
-                <label class="control-label">Password</label>
+                <label class="control-label">Mot de passe du compte cinéma</label>
                 <input type="text" name="password" class="form-control" value="<?php echo "PWD".rand(123456,999999);?>">
                 <?php $frm->validate("password",array("required","label"=>"Password")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
-                <button class="btn btn-success">Add Theatre</button>
+                <button class="btn btn-success">Ajouter le cinéma</button>
               </div>
               <input type="hidden" name="country" class="form-control" id="country">
               <input type="hidden" class="field" id="route" disabled="true">

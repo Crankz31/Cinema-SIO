@@ -8,12 +8,12 @@ include('header.php');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Theater Details
+        Caractéristiques du Cinema
       </h1>
       <ol class="breadcrumb">
-        <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="add_theater.php">Add Theater</a></li>
-        <li class="active">Add Theater Details</li>
+        <li><a href="index.php"><i class="fa fa-home"></i> Accueil</a></li>
+        <li><a href="add_theater.php">Ajouter un cinéma</a></li>
+        <li class="active">Ajouter les caractéristiques</li>
       </ol>
     </section>
 
@@ -23,7 +23,7 @@ include('header.php');
       <!-- Default box --> 
       <div class="box">
          <div class="box-header with-border">
-              <h3 class="box-title">General Details</h3>
+              <h3 class="box-title">Caractéristiques Général</h3>
             </div>
         <div class="box-body">
           <?php
@@ -32,23 +32,23 @@ include('header.php');
           ?>
             <table class="table table-bordered table-hover">
                 <tr>
-                    <td class="col-md-6">Theater Name</td>
+                    <td class="col-md-6">Nom du cinéma</td>
                     <td  class="col-md-6"><?php echo $theatre['name'];?></td>
                 </tr>
                 <tr>
-                    <td>Theater Address</td>
+                    <td>Adresse</td>
                     <td><?php echo $theatre['address'];?></td>
                 </tr>
                 <tr>
-                    <td>Place</td>
+                    <td>Ville</td>
                     <td><?php echo $theatre['place'];?></td>
                 </tr>
                 <tr>
-                    <td>State</td>
+                    <td>Pays</td>
                     <td><?php echo $theatre['state'];?></td>
                 </tr>
                 <tr>
-                    <td>Pin</td>
+                    <td>Code Postal</td>
                     <td><?php echo $theatre['pin'];?></td>
                 </tr>
             </table>
@@ -57,7 +57,7 @@ include('header.php');
       </div>
          <div class="box">
          <div class="box-header with-border">
-              <h3 class="box-title">Screen Details</h3>
+              <h3 class="box-title">Caractéristiques des Salles</h3>
             </div>
         <div class="box-body" id="screendtls">
           <?php
@@ -66,12 +66,12 @@ include('header.php');
             {
           ?>
             <table class="table table-bordered table-hover">
-              <th class="col-md-1">Slno</th>
-              <th class="col-md-3">Screen Name</th>
-              <th class="col-md-1">Seats</th>
-              <th class="col-md-1">Charge</th>
-              <th class="col-md-3">Show Time</th>
-              <th class="text-right col-md-3"><button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Screen</button></th>
+              <th class="col-md-1">Salle Num</th>
+              <th class="col-md-3">Nom de la salle</th>
+              <th class="col-md-1">Sièges</th>
+              <th class="col-md-1">Prix</th>
+              <th class="col-md-3">Heure du film</th>
+              <th class="text-right col-md-3"><button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Ajouter une Salle</button></th>
                 <?php 
                 $sl=1;
                 while($screen=mysqli_fetch_array($sr))
@@ -90,7 +90,7 @@ include('header.php');
                     else
                     {echo "No Show Time Added";}
                     ?></td>
-                    <td class="text-right"><button data-toggle="modal" data-id="<?php echo $screen['screen_id'];?>" data-target="#view-modal2" id="getUser2" class="btn btn-sm btn-warning"><i class="fa fa-plus"></i> Add Show Times</button></td>
+                    <td class="text-right"><button data-toggle="modal" data-id="<?php echo $screen['screen_id'];?>" data-target="#view-modal2" id="getUser2" class="btn btn-sm btn-warning"><i class="fa fa-plus"></i> Ajouter une séance</button></td>
                   </tr>
                   <?php
                   $sl++;
@@ -102,7 +102,7 @@ include('header.php');
             else
             {
               ?>
-              <button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Screen</button>
+              <button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Ajouter une salle</button>
                     
               <?php
             }
@@ -117,7 +117,7 @@ include('header.php');
                        <div class="modal-header"> 
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">
-                            	<i class="fa fa-plus"></i> Add Screen
+                            	<i class="fa fa-plus"></i> Ajouter une Salle
                             </h4> 
                        </div> 
                        <div class="modal-body"> 
@@ -144,14 +144,14 @@ include('header.php');
                        <div class="modal-header"> 
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">
-                            	<i class="fa fa-plus"></i> Add Show Time
+                            	<i class="fa fa-plus"></i> Ajouter un film
                             </h4> 
                        </div> 
                        <div class="modal-body"> 
                            <div class="form-group">
-                       	     <label class="control-label">Select Show</label>
+                       	     <label class="control-label">Selectionner un Film</label>
                        	     <select name="s_name" id="s_name" class="form-control">
-                       	       <option value="0">Select Show</option>
+                       	       <option value="0">Select </option>
                        	       <option>Noon</option>
                        	       <option>Matinee</option>
                        	       <option>First</option>
@@ -160,11 +160,11 @@ include('header.php');
                        	     </select>
                        	   </div>
                        	   <div class="form-group">
-                       	     <label class="control-label">Show Starting Time</label>
+                       	     <label class="control-label">Heure de commencement du film</label>
                        	     <input type="time" id="s_time" class="form-control"/>
                        	   </div>
                        	   <div class="form-group">
-                            <button class="btn btn-success" id="savetime">Save</button>
+                            <button class="btn btn-success" id="savetime">Sauvegarde</button>
                           </div>
                         </div> 
                         <div class="modal-footer"> 
@@ -233,31 +233,31 @@ $(document).on('click', '#savescreen', function(){
   charge=$('#scharge').val();
   if(name=="" && seats=="" && charge=="")
   {
-    alert("Enter Correct Details");
+    alert("Entrer des données valides");
   }
   else if(seats=="" && name=="")
   {
-    alert("Enter Correct Details");
+    alert("Entrer des données valides");
   }
   else if(charge=="" && name=="")
   {
-    alert("Enter Correct Details");
+    alert("Entrer des données valides");
   }
   else if(charge=="" && seats=="")
   {
-    alert("Enter Correct Details");
+    alert("Entrer des données valides");
   }
   else if(charge=="")
   {
-    alert("Enter Correct Details");
+    alert("Entrer des données valides");
   }
    else if(seats=="")
   {
-    alert("Enter Correct Details");
+    alert("Entrer des données valides");
   }
    else if(name=="")
   {
-    alert("Enter Correct Details");
+    alert("Entrer des données valides");
   }
   else
   {
@@ -288,15 +288,15 @@ $('#savetime').click(function(){
   s_name=$('#s_name').val();
   if(s_time=="" && s_name=="0")
   {
-    alert("Enter valid details");
+    alert("Entrer des données valides");
   }
   else if(s_time=="")
   {
-      alert("Enter valid details");
+      alert("Entrer des données valides");
   }
   else if(s_name=="0")
   {
-      alert("Enter valid details");
+      alert("Entrer des données valides");
   }
   else
   {

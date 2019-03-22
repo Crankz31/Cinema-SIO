@@ -3,7 +3,7 @@
 <div class="content">
 	<div class="wrap">
 		<div class="content-top">
-			<h3>Movies</h3>
+			<h3>Films à l'affiche</h3>
 			
 			<?php
           	 $today=date("Y-m-d");
@@ -23,7 +23,7 @@
 						  	</div>
 						  	<div class="movie-text">
 						  		<h4 class="h-text"><a href="about.php?id=<?php echo $m['movie_id'];?>"><?php echo $m['movie_name'];?></a></h4>
-						  		Cast:<Span class="color2"><?php echo $m['cast'];?></span><br>
+						  		Acteurs:<Span class="color2"><?php echo $m['cast'];?></span><br>
 						  		
 						  	</div>
 		  				</div>
