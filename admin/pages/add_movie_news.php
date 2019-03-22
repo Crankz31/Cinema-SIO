@@ -7,7 +7,8 @@ include('header.php');
   <!-- =============================================== -->
   <?php
     include('../../form.php');
-    $frm=new formBuilder;      
+    $frm=new formBuilder;    
+    $_SESSION['add'] = 0;  
   ?>   
   <!-- =============================================== -->
 
@@ -67,8 +68,7 @@ include('header.php');
                <?php $frm->validate("attachment",array("required","label"=>"Image")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
-                <button class="btn btn-success">Ajouter</button>
-              </div>
+              <button class="btn btn-success">Add News</button>
         </form>
         </div> 
         <!-- /.box-footer-->
