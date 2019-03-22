@@ -143,19 +143,19 @@ include('header.php');
                        <div class="modal-header"> 
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">
-                            	<i class="fa fa-plus"></i> Ajouter une séance
+                            	<i class="fa fa-plus"></i> Ajouter un créneaux horaire
                             </h4> 
                        </div> 
                        <div class="modal-body"> 
                            <div class="form-group">
-                       	     <label class="control-label">Selectionner un film</label>
+                       	     <label class="control-label">Selectionner un créneaux horaire</label>
                        	     <select name="s_name" id="s_name" class="form-control">
-                       	       <option value="0">Selectionner un film</option>
-                       	       <option>Noon</option>
-                       	       <option>Matinee</option>
-                       	       <option>First</option>
-                       	       <option>Second</option>
-                       	       <option>Others</option>
+                       	       <option value="0">Selectionner un créneaux horaire</option>
+                       	       <option>Matin</option>
+                       	       <option>Dejeuner</option>
+                       	       <option>Après-midi</option>
+                       	       <option>Soirée</option>
+                       	       <option>Autres</option>
                        	     </select>
                        	   </div>
                        	   <div class="form-group">
