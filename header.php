@@ -69,7 +69,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 function myFunction() {
      if($('#hero-demo').val()=="")
         {
-            alert("Please enter movie name...");
+            alert("Entrez le titre du film ...");
             return false;
         }
     else{

@@ -16,11 +16,11 @@ include('header.php');
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Ajouter un spectacle
+        Ajouter une séance
       </h1>
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-home"></i> Accueil</a></li>
-        <li class="active">Ajouter un spectacle</li>
+        <li class="active">Ajouter une séance</li>
       </ol>
     </section>
 
@@ -33,7 +33,7 @@ include('header.php');
           <?php include('../../msgbox.php');?>
           <form action="process_addshow.php" method="post" id="form1">
             <div class="form-group">
-              <label class="control-label">Choisir un spectacle</label>
+              <label class="control-label">Choisir un film</label>
               <select name="movie" class="form-control">
                 <option value>Selectionner un film</option>
                 <?php
@@ -65,9 +65,9 @@ include('header.php');
               <?php $frm->validate("screen",array("required","label"=>"Screen")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
-              <label class="control-label">Choisir la durée du spectacle</label>
+              <label class="control-label">Choisir un créneau horaire</label>
               <select name="stime[]" class="form-control" id="stime" multiple>
-                <option value="0">Selectionner une durée du spectancle</option>
+                <option value="0">Choisir un créneau horaire</option>
               </select>
               
             </div>
