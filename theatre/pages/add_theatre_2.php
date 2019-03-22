@@ -65,12 +65,12 @@ include('header.php');
             {
           ?>
             <table class="table table-bordered table-hover">
-              <th class="col-md-1">Num salle</th>
+              <th class="col-md-1">ID séance</th>
               <th class="col-md-3">Nom de la salle</th>
               <th class="col-md-1">Sièges</th>
               <th class="col-md-1">Prix</th>
-              <th class="col-md-3">Heure des spectacles</th>
-              <th class="text-right col-md-3"><button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Screen</button></th>
+              <th class="col-md-3">Heure des séances</th>
+              <th class="text-right col-md-3"><button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Ajouter une salle</button></th>
                 <?php 
                 $sl=1;
                 while($screen=mysqli_fetch_array($sr))
@@ -89,7 +89,7 @@ include('header.php');
                     else
                     {echo "No Show Time Added";}
                     ?></td>
-                    <td class="text-right"><button data-toggle="modal" data-id="<?php echo $screen['screen_id'];?>" data-target="#view-modal2" id="getUser2" class="btn btn-sm btn-warning"><i class="fa fa-plus"></i> Add Show Times</button></td>
+                    <td class="text-right"><button data-toggle="modal" data-id="<?php echo $screen['screen_id'];?>" data-target="#view-modal2" id="getUser2" class="btn btn-sm btn-warning"><i class="fa fa-plus"></i> Ajouter une séance </button></td>
                   </tr>
                   <?php
                   $sl++;
@@ -101,7 +101,7 @@ include('header.php');
             else
             {
               ?>
-              <button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Screen</button>
+              <button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Ajouter une salle</button>
                     
               <?php
             }
@@ -116,7 +116,7 @@ include('header.php');
                        <div class="modal-header"> 
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">
-                            	<i class="fa fa-plus"></i> Add Screen
+                            	<i class="fa fa-plus"></i> Ajouter une salle
                             </h4> 
                        </div> 
                        <div class="modal-body"> 
@@ -143,14 +143,14 @@ include('header.php');
                        <div class="modal-header"> 
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">
-                            	<i class="fa fa-plus"></i> Add Show Time
+                            	<i class="fa fa-plus"></i> Ajouter une séance
                             </h4> 
                        </div> 
                        <div class="modal-body"> 
                            <div class="form-group">
-                       	     <label class="control-label">Select Show</label>
+                       	     <label class="control-label">Selectionner un film</label>
                        	     <select name="s_name" id="s_name" class="form-control">
-                       	       <option value="0">Select Show</option>
+                       	       <option value="0">Selectionner un film</option>
                        	       <option>Noon</option>
                        	       <option>Matinee</option>
                        	       <option>First</option>
@@ -159,11 +159,11 @@ include('header.php');
                        	     </select>
                        	   </div>
                        	   <div class="form-group">
-                       	     <label class="control-label">Show Starting Time</label>
+                       	     <label class="control-label">Heure de début de la séance</label>
                        	     <input type="time" id="s_time" class="form-control"/>
                        	   </div>
                        	   <div class="form-group">
-                            <button class="btn btn-success" id="savetime">Save</button>
+                            <button class="btn btn-success" id="savetime">Enregistrer</button>
                           </div>
                         </div> 
                         <div class="modal-footer"> 

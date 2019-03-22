@@ -15,7 +15,7 @@ $theatre=mysqli_fetch_array($th);
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Theatre Assistance</title>
+  <title>Panel Cinéma</title>
   <!-- valodation -->
   <script type="text/javascript" src="../validation/vendor/jquery/jquery-1.10.2.min.js"></script>
   <link rel="stylesheet" href="../validation/dist/css/bootstrapValidator.css"/> 
@@ -49,7 +49,7 @@ $theatre=mysqli_fetch_array($th);
     <!-- Logo -->
     <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>GO</b>MB</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Panel</b> Cinéma</span>
     </a>
@@ -149,7 +149,7 @@ $theatre=mysqli_fetch_array($th);
         </li>
         <li class="treeview">
           <a href="tickets.php">
-            <i class="fa fa-film"></i> <span>Séances du jours</span>
+            <i class="fa fa-film"></i> <span>Réservations du jours</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -157,7 +157,7 @@ $theatre=mysqli_fetch_array($th);
         </li>
         <li class="treeview">
           <a href="view_shows.php">
-            <i class="fa fa-eye"></i> <span>Voir les spectacles</span>
+            <i class="fa fa-eye"></i> <span>Voir les séances</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

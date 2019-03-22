@@ -65,9 +65,9 @@ include('header.php');
               <?php $frm->validate("screen",array("required","label"=>"Screen")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
-              <label class="control-label">Choisir la durée de la séance</label>
+              <label class="control-label">Choisir un créneau horaire</label>
               <select name="stime[]" class="form-control" id="stime" multiple>
-                <option value="0">Selectionner une durée de la séance</option>
+                <option value="0">Choisir un créneau horaire</option>
               </select>
               
             </div>

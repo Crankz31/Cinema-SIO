@@ -31,13 +31,13 @@ include('header.php');
           {?>
             <table class="table">
               <th class="col-md-1">
-                Num salle
+                ID séance
               </th>
               <th class="col-md-2">
                 Nom de la salle
               </th>
               <th class="col-md-3">
-                Durée du film
+                Heure de la séance
               </th>
               <th class="col-md-3">
                 Nom du film
