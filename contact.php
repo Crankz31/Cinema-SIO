@@ -62,7 +62,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   				</div>
 				<div class="col span_1_of_3">
 					<div class="contact_info">
-    	 				<h3>Find Us Here</h3>
+    	 				<h3>Où nous trouver</h3>
 					    	  <div class="map">
 							   	    <iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.3921946187406!2d0.07149691586548569!3d43.22223617913848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a9d4777d5b229f%3A0x9f7d1c13ad55b206!2sLyc%C3%A9e+G%C3%A9n%C3%A9ral+et+Technologique+Marie+Curie!5e0!3m2!1sfr!2sfr!4v1553774177112" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
 							  </div>
