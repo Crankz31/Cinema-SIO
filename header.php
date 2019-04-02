@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
 <link type="text/css" rel="stylesheet" href="http://www.dreamtemplate.com/dreamcodes/tabs/css/tsc_tabs.css" />
 <link rel="stylesheet" href="css/tsc_tabs.css" type="text/css" media="all" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src='js/jquery.color-RGBa-patch.js'></script>
 <script src='js/example.js'></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,35 +31,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="h-logo">
 			<a href="index.php"><img src="images/logo.png" alt=""/></a>
 
-		</div>
-			  <div class="nav-wrap">
+			</div>
 
 
-        <form action="process_search.php" id="reservation-form" method="post" onsubmit="myFunction()">
-		       <fieldset>
+        		<form action="process_search.php" id="reservation-form" method="post" onsubmit="myFunction()">
+		    	<fieldset>
 		       	<div class="field" >
-		       	
-		       		     
-                                <input type="text" placeholder="Chercher un film..." style="height:27px;width:500px"  required id="search111" name="search"> 
-                                
-                                <input type="submit" value="Search" style="height:28px;padding-top:4px" id="button111">
-    </div>       	
-
-		       </fieldset>
-
+                    <input type="text" placeholder="Chercher un film..." style="height:27px;width:500px"  required id="search111" name="search"> 
+                    <input type="submit" value="Search" style="height:28px;padding-top:4px" id="button111">
+    			</div>       	
+				</fieldset>
 			    </form>
-            <div class="clear"></div>
-
-
-			  
+            	<nav class="nav-wrap">
 					<ul class="group" id="example-one">
-			           <li><a href="index.php">Accueil</a></li>
-			  		   <li><a href="movies_events.php">Films à l'affiche</a></li>
-			  		   <li><?php if(isset($_SESSION['user'])){
-			  		   $us=mysqli_query($con,"select * from tbl_registration where user_id='".$_SESSION['user']."'");
-        $user=mysqli_fetch_array($us);?><a href="profile.php"><?php echo $user['name'];?></a><a href="logout.php">Se déconnecter</a><?php }else{?><a href="login.php">Se connecter</a><?php }?></li>
+						<li class="current_page_item">
+      					<a href="#">Home</a>
+    					</li>
+			        	<li><a href="index.php">Accueil</a></li>
+			  			<li><a href="movies_events.php">Films à l'affiche</a></li>
+			  			<li><?php if(isset($_SESSION['user'])){
+			  			$us=mysqli_query($con,"select * from tbl_registration where user_id='".$_SESSION['user']."'");
+						$user=mysqli_fetch_array($us);?><a href="profile.php"><?php echo $user['name'];?></a><a href="logout.php">Se déconnecter</a><?php }else{?><a href="login.php">Se connecter</a><?php }?></li>
 			        </ul>
-			  </div>
+				</nav>
+			
  			<div class="clear"></div>
    		</div>
     </div>
@@ -75,5 +70,6 @@ function myFunction() {
     else{
         return true;
     }
-    </script>
+    
 }
+</script>
