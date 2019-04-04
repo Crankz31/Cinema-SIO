@@ -22,9 +22,9 @@ include('header.php');
       <?php
       if($_SESSION['add'] == 11111)
       {?>
-      <div class="alert alert-success">
-  <strong>Succes!</strong> Ajout réalisé avec succès ..
-</div>
+          <div class="alert alert-success">
+            <strong>Succes!</strong> Ajout réalisé avec succès ..
+          </div>
 <?php
 }?>
       <ol class="breadcrumb">

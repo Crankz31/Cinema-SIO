@@ -7,6 +7,7 @@
 		                   <li><a href="index.php">Accueil</a></li>
 			  		   <li><a href="movies_events.php">Films à l'affiche</a></li>
 			  		   <li><a href="login.php">Connexion</a></li>
+                         <li><a href="contact.php">Contact</a></li>
 		                   </ul>
 		              </div>
 				</div>
@@ -22,14 +23,10 @@
 					<div class="call_info">
 						<p class="txt_3">Appelez nous:</p>
 						<p class="txt_4">0562910102</p>
+                        
 					</div>
 				</div>
-				<div class="col_1_of_4 span_1_of_4">
-					<div class=social>
-						<a href="#"><img src="images/fb.png" alt=""/></a>
-						<a href="#"><img src="images/tw.png" alt=""/></a>
-					</div>
-				</div>
+				
 				<div class="clear"></div>
 			</div>
 		</div>
