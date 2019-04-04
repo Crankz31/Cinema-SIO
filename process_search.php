@@ -3,7 +3,6 @@ extract($_POST);
 ?>
 </div>
 <div class="content">
-    <?php print_r($rs);?>
 	<div class="wrap">
 		<div class="content-top">
 			<h3>Films</h3>

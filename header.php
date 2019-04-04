@@ -45,11 +45,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			    </form>
             	<nav class="nav-wrap">
 					<ul class="group" id="example-one">
-						<li class="current_page_item">
-      					<a href="#">Home</a>
-    					</li>
 			        	<li><a href="index.php">Accueil</a></li>
 			  			<li><a href="movies_events.php">Films à l'affiche</a></li>
+						<li><a href="contact.php">Contact</a></li>
 			  			<li><?php if(isset($_SESSION['user'])){
 			  			$us=mysqli_query($con,"select * from tbl_registration where user_id='".$_SESSION['user']."'");
 						$user=mysqli_fetch_array($us);?><a href="profile.php"><?php echo $user['name'];?></a><a href="logout.php">Se déconnecter</a><?php }else{?><a href="login.php">Se connecter</a><?php }?></li>
