@@ -66,7 +66,7 @@ include('header.php');
                     <?php echo $screen['screen_name'];?>
                   </td>
                   <td>
-                    <?php echo date('h:i A',strtotime($show_time['start_time']))." ( ".utf8_encode($show_time['name'])." Show )";?>
+                    <?php echo date('h:i A',strtotime($show_time['start_time']))." ( ".utf8_encode($show_time['name'])." ) ";?>
                   </td>
                   <td>
                     <?php echo $movie['movie_name'];?>
@@ -74,11 +74,11 @@ include('header.php');
                   <td>
                     <?php if($shows['r_status']==1)
                     {
-                    ?><a href="change_running.php?id=<?php echo $shows['s_id'];?>&status=0"><button class="btn btn-danger">Arrêter la séance</button></a>
+                    ?><a href="change_running.php?id=<?php echo $shows['s_id'];?>&status=0"><button class="btn btn-danger">Désactiver la séance</button></a>
                     <?php
                     }
                     else
-                    {?><a href="change_running.php?id=<?php echo $shows['s_id'];?>&status=1"><button class="btn btn-success">Démarrer la séance</button></a>
+                    {?><a href="change_running.php?id=<?php echo $shows['s_id'];?>&status=1"><button class="btn btn-success">Activer la séance</button></a>
                     <?php 
                     }?>
                     <a href="stop_running.php?id=<?php echo $shows['s_id'];?>"><button class="btn btn-warning">Supprimer</button></a>

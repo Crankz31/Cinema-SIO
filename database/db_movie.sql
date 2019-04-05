@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 05 avr. 2019 à 14:45
--- Version du serveur :  5.7.21
--- Version de PHP :  5.6.35
+-- Généré le :  ven. 05 avr. 2019 à 18:16
+-- Version du serveur :  5.7.23
+-- Version de PHP :  7.0.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,20 +42,19 @@ CREATE TABLE IF NOT EXISTS `tbl_bookings` (
   `date` date NOT NULL,
   `status` int(1) NOT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_bookings`
 --
 
 INSERT INTO `tbl_bookings` (`book_id`, `ticket_id`, `t_id`, `user_id`, `show_id`, `screen_id`, `no_seats`, `amount`, `ticket_date`, `date`, `status`) VALUES
-(3, '', 4, 4, 3, 3, 200, 75, '2017-05-21', '2017-05-21', 1),
-(4, '', 4, 4, 1, 3, 2, 150, '2017-05-22', '2017-05-22', 1),
-(5, '', 3, 3, 6, 1, 200, 70, '2017-05-25', '2017-05-22', 1),
-(6, '', 3, 3, 6, 1, 100, 70, '2017-05-22', '2017-05-22', 1),
-(7, '', 3, 3, 5, 1, 1, 70, '2017-05-22', '2017-05-22', 1),
-(11, 'BKID5258816', 4, 2, 3, 3, 1, 75, '2017-05-22', '2017-05-22', 1),
-(12, 'BKID947', 4, 2, 1, 3, 3, 21, '2019-04-05', '2019-04-05', 1);
+(11, 'BKID525', 4, 2, 3, 3, 1, 75, '2017-05-22', '2017-05-22', 1),
+(12, 'BKID947', 4, 2, 1, 3, 3, 21, '2019-04-05', '2019-04-05', 1),
+(13, 'BKID301', 3, 2, 5, 1, 1, 5, '2019-04-05', '2019-04-05', 1),
+(14, 'BKID760', 3, 4, 19, 1, 1, 5, '2019-04-05', '2019-04-05', 1),
+(15, 'BKID218', 3, 2, 7, 1, 2, 10, '2019-04-05', '2019-04-05', 1),
+(16, 'BKID146', 3, 4, 20, 1, 10, 50, '2019-04-05', '2019-04-05', 1);
 
 -- --------------------------------------------------------
 
@@ -87,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `tbl_login` (
   `password` varchar(50) CHARACTER SET latin1 NOT NULL,
   `user_type` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_login`
@@ -98,7 +97,8 @@ INSERT INTO `tbl_login` (`id`, `user_id`, `username`, `password`, `user_type`) V
 (2, 3, 'theatre', 'password', 1),
 (3, 4, 'theatre2', 'password', 1),
 (12, 2, 'rahulreghunath11@gmail.com', 'rahul', 2),
-(16, 3, 'vishnut300@gmail.com', 'vishnut300', 2);
+(16, 3, 'vishnut300@gmail.com', 'vishnut300', 2),
+(17, 4, 'Patrick@gmail.com', 'password', 2);
 
 -- --------------------------------------------------------
 
@@ -171,16 +171,16 @@ CREATE TABLE IF NOT EXISTS `tbl_registration` (
   `age` int(2) NOT NULL,
   `gender` varchar(10) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_registration`
 --
 
 INSERT INTO `tbl_registration` (`user_id`, `name`, `email`, `phone`, `age`, `gender`) VALUES
-(1, 'rahul', '', '9037500119', 23, 'gender'),
 (2, 'rahul', 'rahulreghunath11@gmail.com', '9037500119', 23, 'gender'),
-(3, 'vishnu', 'vishnut300@gmail.com', '8156820497', 22, 'gender');
+(3, 'vishnu', 'vishnut300@gmail.com', '8156820497', 22, 'gender'),
+(4, 'Patrick', 'Patrick@gmail.com', '9037500119', 18, 'gender');
 
 -- --------------------------------------------------------
 
@@ -206,7 +206,7 @@ INSERT INTO `tbl_screens` (`screen_id`, `t_id`, `screen_name`, `seats`, `charge`
 (1, 3, 'Salle 1', 100, 5),
 (2, 3, 'Salle 2', 150, 6),
 (3, 4, 'Salle 2', 125, 7),
-(4, 4, 'Screen1', 34, 120);
+(4, 4, 'Salle 1', 100, 5);
 
 -- --------------------------------------------------------
 
@@ -224,31 +224,29 @@ CREATE TABLE IF NOT EXISTS `tbl_shows` (
   `status` int(11) NOT NULL COMMENT '1 means show available',
   `r_status` int(11) NOT NULL,
   PRIMARY KEY (`s_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_shows`
 --
 
 INSERT INTO `tbl_shows` (`s_id`, `st_id`, `theatre_id`, `movie_id`, `start_date`, `status`, `r_status`) VALUES
-(1, 9, 4, 1, '2017-05-01', 1, 1),
-(2, 10, 4, 1, '2017-05-01', 1, 1),
-(3, 11, 4, 2, '2017-05-01', 1, 1),
-(4, 12, 4, 2, '2017-05-01', 1, 1),
-(5, 1, 3, 1, '2017-05-01', 1, 1),
-(6, 2, 3, 1, '2017-05-01', 1, 1),
-(7, 3, 3, 1, '2017-05-01', 1, 0),
-(8, 4, 3, 1, '2017-05-01', 1, 0),
-(9, 5, 3, 2, '2017-05-01', 1, 0),
-(10, 6, 3, 2, '2017-05-01', 1, 0),
-(11, 7, 3, 2, '2017-05-01', 1, 0),
-(12, 8, 3, 2, '2017-05-01', 1, 0),
-(13, 1, 3, 10, '2017-02-25', 1, 0),
-(14, 2, 3, 10, '2017-02-25', 1, 0),
-(15, 9, 4, 8, '2017-05-28', 1, 0),
-(16, 10, 4, 8, '2017-05-28', 1, 0),
-(17, 11, 4, 8, '2017-05-28', 1, 0),
-(18, 12, 4, 8, '2017-05-28', 1, 0);
+(19, 2, 3, 5, '2019-04-05', 1, 1),
+(20, 1, 3, 3, '2019-04-05', 1, 1),
+(21, 3, 3, 2, '2019-04-05', 1, 1),
+(22, 4, 3, 1, '2019-04-05', 1, 1),
+(23, 5, 3, 1, '2019-04-05', 1, 1),
+(24, 6, 3, 2, '2019-04-05', 1, 1),
+(25, 7, 3, 3, '2019-04-05', 1, 1),
+(26, 8, 3, 5, '2019-04-05', 1, 1),
+(27, 15, 4, 1, '2019-04-05', 1, 1),
+(28, 16, 4, 2, '2019-04-05', 1, 1),
+(29, 17, 4, 3, '2019-04-05', 1, 1),
+(30, 18, 4, 5, '2019-04-05', 1, 1),
+(31, 12, 4, 1, '2019-04-05', 1, 1),
+(32, 11, 4, 2, '2019-04-05', 1, 1),
+(33, 10, 4, 3, '2019-04-05', 1, 1),
+(34, 9, 4, 1, '2019-04-05', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -263,25 +261,29 @@ CREATE TABLE IF NOT EXISTS `tbl_show_time` (
   `name` varchar(40) CHARACTER SET latin1 NOT NULL COMMENT 'noon,second,etc',
   `start_time` time NOT NULL,
   PRIMARY KEY (`st_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_show_time`
 --
 
 INSERT INTO `tbl_show_time` (`st_id`, `screen_id`, `name`, `start_time`) VALUES
-(1, 1, 'Séance n°1 de la matinée', '10:00:00'),
-(2, 1, 'Séance n°2 de la matinée', '14:00:00'),
-(3, 1, 'Séance n°1 de la soirée', '18:00:00'),
-(4, 1, 'Séance n°2 de la soirée', '21:00:00'),
-(5, 2, 'Séance n°1 de la matinée', '10:00:00'),
-(6, 2, 'Séance n°2 de la matinée', '14:00:00'),
-(7, 2, 'Séance n°1 de la soirée', '18:00:00'),
-(8, 2, 'Séance n°2 de la soirée', '21:00:00'),
-(9, 3, 'Séance n°1 de la matinée', '10:00:00'),
-(10, 3, 'Séance n°2 de la matinée\r\n', '14:00:00'),
-(11, 3, 'Séance n°1 de la soirée', '18:00:00'),
-(12, 3, 'Séance n°2 de la soirée\r\n', '21:00:00');
+(1, 1, 'Matin (10h)', '10:00:00'),
+(2, 1, 'Dejeuner (14h)', '14:00:00'),
+(3, 1, 'Après-midi (18h)', '18:00:00'),
+(4, 1, 'Soirée (21h)', '21:00:00'),
+(5, 2, 'Matin (10h)', '10:00:00'),
+(6, 2, 'Dejeuner (14h)', '14:00:00'),
+(7, 2, 'Après-midi (18h)', '18:00:00'),
+(8, 2, 'Soirée (21h)', '21:00:00'),
+(9, 3, 'Matin (10h)', '10:00:00'),
+(10, 3, 'Dejeuner (14h)', '14:00:00'),
+(11, 3, 'Après-midi (18h)', '18:00:00'),
+(12, 3, 'Soirée (21h)', '21:00:00'),
+(15, 4, 'Matin (10h)', '10:00:00'),
+(16, 4, 'Dejeuner (14h)', '14:00:00'),
+(17, 4, 'Après-midi (18h)', '18:00:00'),
+(18, 4, 'Soirée (21h)', '21:00:00');
 
 -- --------------------------------------------------------
 
