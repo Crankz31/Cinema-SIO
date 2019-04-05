@@ -62,7 +62,7 @@ if(!isset($_SESSION['user']))
 									<?php echo $bkg['no_seats'];?>
 								</td>
 								<td>
-									Rs <?php echo $bkg['amount'];?>
+									<?php echo $bkg['amount'];?>  €
 								</td>
 								<td>
 									<?php  if($bkg['ticket_date']<date('Y-m-d'))

@@ -1,34 +1,37 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
--- http://www.phpmyadmin.net
+-- version 4.7.9
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 22, 2017 at 09:42 PM
--- Server version: 5.5.54-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.21
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  ven. 05 avr. 2019 à 12:50
+-- Version du serveur :  5.7.21
+-- Version de PHP :  5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_movie`
+-- Base de données :  `marty`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_bookings`
+-- Structure de la table `tbl_bookings`
 --
 
+DROP TABLE IF EXISTS `tbl_bookings`;
 CREATE TABLE IF NOT EXISTS `tbl_bookings` (
   `book_id` int(11) NOT NULL AUTO_INCREMENT,
-  `ticket_id` varchar(30) NOT NULL,
+  `ticket_id` varchar(30) CHARACTER SET latin1 NOT NULL,
   `t_id` int(11) NOT NULL COMMENT 'theater id',
   `user_id` int(11) NOT NULL,
   `show_id` int(11) NOT NULL,
@@ -39,10 +42,10 @@ CREATE TABLE IF NOT EXISTS `tbl_bookings` (
   `date` date NOT NULL,
   `status` int(1) NOT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_bookings`
+-- Déchargement des données de la table `tbl_bookings`
 --
 
 INSERT INTO `tbl_bookings` (`book_id`, `ticket_id`, `t_id`, `user_id`, `show_id`, `screen_id`, `no_seats`, `amount`, `ticket_date`, `date`, `status`) VALUES
@@ -56,9 +59,10 @@ INSERT INTO `tbl_bookings` (`book_id`, `ticket_id`, `t_id`, `user_id`, `show_id`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_contact`
+-- Structure de la table `tbl_contact`
 --
 
+DROP TABLE IF EXISTS `tbl_contact`;
 CREATE TABLE IF NOT EXISTS `tbl_contact` (
   `contact_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -66,25 +70,26 @@ CREATE TABLE IF NOT EXISTS `tbl_contact` (
   `mobile` int(11) NOT NULL,
   `subject` varchar(1000) NOT NULL,
   PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_login`
+-- Structure de la table `tbl_login`
 --
 
+DROP TABLE IF EXISTS `tbl_login`;
 CREATE TABLE IF NOT EXISTS `tbl_login` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL COMMENT 'email',
-  `password` varchar(50) NOT NULL,
+  `username` varchar(50) CHARACTER SET latin1 NOT NULL COMMENT 'email',
+  `password` varchar(50) CHARACTER SET latin1 NOT NULL,
   `user_type` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_login`
+-- Déchargement des données de la table `tbl_login`
 --
 
 INSERT INTO `tbl_login` (`id`, `user_id`, `username`, `password`, `user_type`) VALUES
@@ -107,76 +112,78 @@ INSERT INTO `tbl_login` (`id`, `user_id`, `username`, `password`, `user_type`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_movie`
+-- Structure de la table `tbl_movie`
 --
 
+DROP TABLE IF EXISTS `tbl_movie`;
 CREATE TABLE IF NOT EXISTS `tbl_movie` (
   `movie_id` int(11) NOT NULL AUTO_INCREMENT,
   `t_id` int(11) NOT NULL COMMENT 'theatre id',
-  `movie_name` varchar(100) NOT NULL,
-  `cast` varchar(500) NOT NULL,
-  `desc` varchar(1000) NOT NULL,
+  `movie_name` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `cast` varchar(500) CHARACTER SET latin1 NOT NULL,
+  `desc` varchar(1000) CHARACTER SET latin1 NOT NULL,
   `release_date` date NOT NULL,
-  `image` varchar(200) NOT NULL,
-  `video_url` varchar(200) NOT NULL,
+  `image` varchar(200) CHARACTER SET latin1 NOT NULL,
+  `video_url` varchar(200) CHARACTER SET latin1 NOT NULL,
   `status` int(1) NOT NULL COMMENT '0 means active ',
   PRIMARY KEY (`movie_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_movie`
+-- Déchargement des données de la table `tbl_movie`
 --
 
 INSERT INTO `tbl_movie` (`movie_id`, `t_id`, `movie_name`, `cast`, `desc`, `release_date`, `image`, `video_url`, `status`) VALUES
-(1, 3, 'Sakhav', 'Nivin', 'This story revolves around a student political leader who fights for his left-wing ideals. When some people try to use him in order to fulfill their intentions, he is forced to fight for his ideals.', '2018-01-01', 'images/maxresdefault.jpg', 'https://www.youtube.com/watch?v=x_AK7HWpJ-0', 0),
-(2, 3, 'Comarade In America', 'Dulquer Salmaan', 'Aji Mathew is a lovable, courageous, and modest youngster who hails from Pala. He meets a girl named Sara at college, and they fall in love regardless of their upbringing.', '2017-05-05', 'images/cia-new-poster-759.jpeg', 'https://www.youtube.com/watch?v=f5nvCp0QFdA', 0),
-(3, 3, 'Angamaly Diaries', ' Reshma Rajan, Tito Wilson, Sarath Kumar', 'Angamaly Diaries is a 2017 Indian Malayalam-language crime drama film directed by Lijo Jose Pellissery and written by Chemban Vinod Jose.', '2017-05-01', 'images/angamaly-diaries-2.jpg', 'https://www.youtube.com/watch?v=4yRBJCrjabU', 0),
-(8, 3, 'Godha', 'Tovino Thomas, Wamiqa Gabbi ', 'Godha is an Malayalam Sports-Comedy movie directed by Basil Joseph, starring Tovino Thomas, Wamiqa Gabbi and Renji Panicker in the lead roles', '2017-05-19', 'images/godha.jpg', 'https://www.youtube.com/watch?v=hnICGugY6fI', 0),
-(10, 3, 'Ramante Edanthottam', 'Kunchacko Boban, Anu Sithara', 'Ramante Edanthottam is an upcoming Malayalam language film written produced and directed by Ranjith Shankar.', '2017-05-12', 'images/raman.jpg', 'https://www.youtube.com/watch?v=H6HK51qVdmc', 0);
+(1, 3, 'Arnold le magnifque', 'Arnold Schwarzenegger', 'Ce film suit la progression d\'Arnold Schwarzenegger vers son 6e titre de Mr. Olympia, à 28 ans.', '2018-01-01', 'images/arnold_le_magnifique_poster.jpg', 'https://www.youtube.com/watch?v=rq45GnjuIlE', 0),
+(2, 3, 'Coach Carter', 'Samuel L. Jackson', 'L\'histoire vraie de Ken Carter, l\'entraîneur de basket d\'une &eacutequipe de basket-ball de lyc&eacutee, qui devint c&eacutelèbre en 1999 après avoir renvoy&eacute ses joueurs à leurs chères &eacutetudes, d&eacuteclarant forfait 2 matchs de suite alors que l\'&eacutequipe &eacutetait invaincue, parce que ces derniers n\'avaient pas obtenu des r&eacutesultats scolaires suffisants.', '2018-05-12', 'images/coach_carter_poster.jpg', 'https://www.youtube.com/watch?v=znyAnWUYf2g', 0),
+(3, 3, 'Creed', 'Sylvester Stalone, Michael B. Jordan', 'Adonis Johnson n\'a jamais connu son père, le c&eacutelèbre champion du monde poids lourd Apollo Creed d&eacutec&eacuted&eacute avant sa naissance. Pourtant, il a la boxe dans le sang et d&eacutecide d\'être entraîn&eacute par le meilleur de sa cat&eacutegorie. À Philadelphie, il retrouve la trace de Rocky Balboa, que son père avait affront&eacute autrefois, et lui demande de devenir son entraîneur. D\'abord r&eacuteticent, l\'ancien champion d&eacutecèle une force in&eacutebranlable chez Adonis et finit par accepter', '2015-05-12', 'images/creed_poster.jpg', 'https://www.youtube.com/watch?v=Uv554B7YHk4', 0),
+(5, 3, 'Invictus', 'Morgan Freeman, Matt Demon', '&eacute', '2017-05-12', 'images/invictus_poster.jpg', 'https://www.youtube.com/watch?v=Vhl2Zl_QQhE', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_news`
+-- Structure de la table `tbl_news`
 --
 
+DROP TABLE IF EXISTS `tbl_news`;
 CREATE TABLE IF NOT EXISTS `tbl_news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `cast` varchar(100) NOT NULL,
+  `name` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `cast` varchar(100) CHARACTER SET latin1 NOT NULL,
   `news_date` date NOT NULL,
-  `description` varchar(200) NOT NULL,
-  `attachment` varchar(200) NOT NULL,
+  `description` varchar(200) CHARACTER SET latin1 NOT NULL,
+  `attachment` varchar(200) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`news_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_news`
+-- Déchargement des données de la table `tbl_news`
 --
 
 INSERT INTO `tbl_news` (`news_id`, `name`, `cast`, `news_date`, `description`, `attachment`) VALUES
-(3, 'The Mummy', 'Tom Cruiz', '2017-06-15', 'Thought safely entombed in a crypt deep beneath the desert, an ancient princess whose destiny was unjustly taken from her is awakened in the modern era', 'news_images/mummy.jpg'),
-(5, 'Transformers: The Last Knight', ' Mark Wahlberg , Isabela Moner ', '2017-07-21', 'Humans are at war with the Transformers, and Optimus Prime is gone. The key to saving the future lies buried in the secrets of the past and the hidden history of Transformers on Earth', 'news_images/tra.jpg'),
-(6, 'Tiyan', 'Privthi Raj,Indrajith', '2017-10-18', 'Tiyaan is an upcoming Indian Malayalam film written by Murali Gopy and directed by Jiyen Krishnakumar.', 'news_images/tiyan.jpg');
+(6, 'Million Dollar Baby', 'Clint Estawood, Morgan Freeman', '2017-06-15', 'Rejet&eacute depuis longtemps par sa fille, lentraîneur Frankie Dunn sest repli&eacute sur lui-même et vit dans un d&eacutesert affectif. Le jour où Maggie Fitzgerald, 31 ans, pousse la porte de son g', 'news_images/million_dollar_baby_poster.jpg'),
+(7, 'The Art Of Flight', 'Travis Rice', '2017-07-21', 'A mi-chemin entre le documentaire et le road movie, ce film est centr&eacute sur Travis Rice, v&eacuteritable l&eacutegende du snowboard, et ses amis, repoussant sans cesse les limites des sports extr', 'news_images/the_art_of_flight_poster.jpg'),
+(8, 'Tyson', 'Mike Tyson', '2017-10-18', 'A travers des images darchives et son t&eacutemoignage, Mike Tyson retrace sa carrière. De ses premiers souvenirs denfance jusquà ses dilemmes actuels, lathlète controvers&eacute revient sur son enfan', 'news_images/tyson_poster.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_registration`
+-- Structure de la table `tbl_registration`
 --
 
+DROP TABLE IF EXISTS `tbl_registration`;
 CREATE TABLE IF NOT EXISTS `tbl_registration` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `phone` varchar(12) NOT NULL,
+  `name` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `email` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `phone` varchar(12) CHARACTER SET latin1 NOT NULL,
   `age` int(2) NOT NULL,
-  `gender` varchar(10) NOT NULL,
+  `gender` varchar(10) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_registration`
+-- Déchargement des données de la table `tbl_registration`
 --
 
 INSERT INTO `tbl_registration` (`user_id`, `name`, `email`, `phone`, `age`, `gender`) VALUES
@@ -187,34 +194,36 @@ INSERT INTO `tbl_registration` (`user_id`, `name`, `email`, `phone`, `age`, `gen
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_screens`
+-- Structure de la table `tbl_screens`
 --
 
+DROP TABLE IF EXISTS `tbl_screens`;
 CREATE TABLE IF NOT EXISTS `tbl_screens` (
   `screen_id` int(11) NOT NULL AUTO_INCREMENT,
   `t_id` int(11) NOT NULL COMMENT 'theatre id',
-  `screen_name` varchar(110) NOT NULL,
+  `screen_name` varchar(110) CHARACTER SET latin1 NOT NULL,
   `seats` int(11) NOT NULL COMMENT 'number of seats',
   `charge` int(11) NOT NULL,
   PRIMARY KEY (`screen_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_screens`
+-- Déchargement des données de la table `tbl_screens`
 --
 
 INSERT INTO `tbl_screens` (`screen_id`, `t_id`, `screen_name`, `seats`, `charge`) VALUES
-(1, 3, 'Screen 1', 100, 70),
-(2, 3, 'Screen 2', 150, 60),
-(3, 4, 'Screen 1', 200, 75),
-(4, 14, 'Screen1', 34, 120);
+(1, 3, 'Salle 1', 100, 5),
+(2, 3, 'Salle 2', 150, 6),
+(3, 4, 'Salle 2', 125, 7),
+(4, 4, 'Screen1', 34, 120);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_shows`
+-- Structure de la table `tbl_shows`
 --
 
+DROP TABLE IF EXISTS `tbl_shows`;
 CREATE TABLE IF NOT EXISTS `tbl_shows` (
   `s_id` int(11) NOT NULL AUTO_INCREMENT,
   `st_id` int(11) NOT NULL COMMENT 'show time id',
@@ -224,10 +233,10 @@ CREATE TABLE IF NOT EXISTS `tbl_shows` (
   `status` int(11) NOT NULL COMMENT '1 means show available',
   `r_status` int(11) NOT NULL,
   PRIMARY KEY (`s_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_shows`
+-- Déchargement des données de la table `tbl_shows`
 --
 
 INSERT INTO `tbl_shows` (`s_id`, `st_id`, `theatre_id`, `movie_id`, `start_date`, `status`, `r_status`) VALUES
@@ -253,70 +262,61 @@ INSERT INTO `tbl_shows` (`s_id`, `st_id`, `theatre_id`, `movie_id`, `start_date`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_show_time`
+-- Structure de la table `tbl_show_time`
 --
 
+DROP TABLE IF EXISTS `tbl_show_time`;
 CREATE TABLE IF NOT EXISTS `tbl_show_time` (
   `st_id` int(11) NOT NULL AUTO_INCREMENT,
   `screen_id` int(11) NOT NULL,
-  `name` varchar(40) NOT NULL COMMENT 'noon,second,etc',
+  `name` varchar(40) CHARACTER SET latin1 NOT NULL COMMENT 'noon,second,etc',
   `start_time` time NOT NULL,
   PRIMARY KEY (`st_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_show_time`
+-- Déchargement des données de la table `tbl_show_time`
 --
 
 INSERT INTO `tbl_show_time` (`st_id`, `screen_id`, `name`, `start_time`) VALUES
-(1, 1, 'Noon', '10:00:00'),
-(2, 1, 'Matinee', '14:00:00'),
-(3, 1, 'First', '18:00:00'),
-(4, 1, 'Second', '21:00:00'),
-(5, 2, 'Noon', '10:00:00'),
-(6, 2, 'Matinee', '14:00:00'),
-(7, 2, 'First', '18:00:00'),
-(8, 2, 'Second', '21:00:00'),
-(9, 3, 'Noon', '10:00:00'),
-(10, 3, 'Matinee', '14:00:00'),
-(11, 3, 'First', '18:00:00'),
-(12, 3, 'Second', '21:00:00'),
-(14, 4, 'Noon', '12:03:00');
+(1, 1, 'Séance n°1 de la matinée', '10:00:00'),
+(2, 1, 'Séance n°2 de la matinée', '14:00:00'),
+(3, 1, 'Séance n°1 de la soirée', '18:00:00'),
+(4, 1, 'Séance n°2 de la soirée', '21:00:00'),
+(5, 2, 'Séance n°1 de la matinée', '10:00:00'),
+(6, 2, 'Séance n°2 de la matinée', '14:00:00'),
+(7, 2, 'Séance n°1 de la soirée', '18:00:00'),
+(8, 2, 'Séance n°2 de la soirée', '21:00:00'),
+(9, 3, 'Séance n°1 de la matinée', '10:00:00'),
+(10, 3, 'Séance n°2 de la matinée\r\n', '14:00:00'),
+(11, 3, 'Séance n°1 de la soirée', '18:00:00'),
+(12, 3, 'Séance n°2 de la soirée\r\n', '21:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_theatre`
+-- Structure de la table `tbl_theatre`
 --
 
+DROP TABLE IF EXISTS `tbl_theatre`;
 CREATE TABLE IF NOT EXISTS `tbl_theatre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `place` varchar(100) NOT NULL,
-  `state` varchar(50) NOT NULL,
+  `name` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `address` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `place` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `state` varchar(50) CHARACTER SET latin1 NOT NULL,
   `pin` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_theatre`
+-- Déchargement des données de la table `tbl_theatre`
 --
 
 INSERT INTO `tbl_theatre` (`id`, `name`, `address`, `place`, `state`, `pin`) VALUES
-(2, 'Nayanam', 'Adoor', 'Adoor', 'Kerala', 691523),
-(3, 'Nadam', 'Adoor', 'Adoor, Kerala, India', 'Kerala', 691523),
-(4, 'Smitha', 'Adoor', 'adoor', 'Kerala', 691523),
-(5, 'Smitha', 'Adoor', 'adoor', 'Kerala', 691523),
-(6, 'rty', 'ryty', 'rty', 'tryt', 545),
-(7, 'rty', 'ryty', 'rty', 'tryt', 545),
-(8, 'rty', 'ryty', 'rty', 'tryt', 545),
-(9, 'dgd', 'dgf', 'Mannady, Chennai, Tamil Nadu, India', 'Tamil Nadu', 600001),
-(10, 'vxcv', 'sdfs', 'Mannady, Prakasam Road, George Town, Chennai, Tamil Nadu, India', 'Tamil Nadu', 600001),
-(11, '', '', '', '', 0),
-(12, '', '', '', '', 0),
-(13, 'rye', 'yetyy', 'Yeyeye Hotel, Changchun, Jilin, China', 'Jilin Sheng', 130012),
-(14, 'Trinity Movies', 'Pathanamthtta', 'Pathanamthitta, Kerala, India', 'Kerala', 691554);
+(3, 'GOMB Centre', '2 Rue Georges Ledormeur', 'Tarbes', 'Occitanie', 65000),
+(4, 'GOMB Gare', '14 Rue Victor Hugo', 'Tarbes', 'Occitanie', 65000);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

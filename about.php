@@ -60,7 +60,7 @@
 							else
 							{
 								?>
-								<h3>Pas de films à l'affiche</h3>
+								<h3>Aucunes séances.</h3>
 								<?php
 							}
 							?>
