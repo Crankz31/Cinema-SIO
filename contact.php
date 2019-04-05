@@ -23,10 +23,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 			  <div class="nav-wrap">
 					<ul class="group" id="example-one">
-			           <li><a href="index.php">ACCUEIL</a></li>
-			           <li><a href="about.php">A PROPOS</a></li>
-			  		   <li><a href="movies_events.php">FILMS ET EVENEMENTS</a></li>
+		           <li><a href="index.php">Accueil</a></li>
+			  		   <li><a href="movies_events.php">Films à l'affiche</a></li>
 			  		   <li class="current_page_item"><a href="contact.php">Contact</a></li>
+							 <li><?php if(isset($_SESSION['user'])){
+								$us=mysqli_query($con,"select * from tbl_registration where user_id='".$_SESSION['user']."'");
+								$user=mysqli_fetch_array($us);?><a href="profile.php"><?php echo $user['name'];?></a><a href="logout.php">Se déconnecter</a><?php }else{?><a href="login.php">Se connecter</a><?php }?></li>
 			        </ul>
 			  </div>
  			<div class="clear"></div>
@@ -45,15 +47,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						    	<span><input type="text" value="" required name="name"></span>
 						    </div>
 						    <div>
-						    	<span><label>E-MAIL</label></span>
+						    	<span><label>E-mail</label></span>
 						    	<span><input type="text" value="" required name="email"></span>
 						    </div>
 						    <div>
-						     	<span><label>Tel.NO</label></span>
+						     	<span><label>Numéro de téléphone</label></span>
 						    	<span><input type="number" value="" required name="mobile"></span>
 						    </div>
 						    <div>
-						    	<span><label>SUJET</label></span>
+						    	<span><label>Sujet</label></span>
 						    	<span><textarea required name="subect"> </textarea></span>
 						    </div>
 						   
@@ -84,9 +86,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="footer-nav">
 		                <ul>
-		                   <li><a href="index.php">Accueil</a></li>
-		                    <li><a href="movies_events.php">Films à l'affiche</a></li>
-		                     <li><a href="login.php">Connexion</a></li>
+		                  		<li><a href="index.php">Accueil</a></li>
+		                    	<li><a href="movies_events.php">Films à l'affiche</a></li>
+													<li><a href="contact.php">Contact</a></li>
+													<li><a href="login.php">Connexion</a></li>
 		                      
 		                   </ul>
 		              </div>
@@ -103,19 +106,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="call_info">
 						<p class="txt_3">Appelez nous:</p>
-						<p class="txt_4">0562910102</p>
+						<p class="txt_4">05.62.91.01.02</p>
 					</div>
 				</div>
 				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
-	<div class="footer-bottom">
-	<div class="wrap">
-	<div class="copy">
-		<p>All rights Reserved | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
-	</div>
- 	</div>
 </div>
 </body>
 </html>
