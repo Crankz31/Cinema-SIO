@@ -27,7 +27,7 @@ include('header.php');
                                 
                                 
                                 
-                                <span class="text-top"><?php echo utf8_encode ($n['description']);?></span>
+                                <span class="text-top"><?php echo utf8_encode($n['description']);?></span>
                           </div>
 					</div>
 					<div class="clear"></div>

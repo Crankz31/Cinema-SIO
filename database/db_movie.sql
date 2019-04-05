@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 05 avr. 2019 à 14:13
+-- Généré le :  ven. 05 avr. 2019 à 14:45
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `tbl_bookings` (
   `date` date NOT NULL,
   `status` int(1) NOT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_bookings`
@@ -97,17 +97,7 @@ INSERT INTO `tbl_login` (`id`, `user_id`, `username`, `password`, `user_type`) V
 (1, 0, 'admin', 'password', 0),
 (2, 3, 'theatre', 'password', 1),
 (3, 4, 'theatre2', 'password', 1),
-(4, 5, 'USR858911', 'PWD608105', 1),
-(5, 6, 'USR389436', 'PWD214748', 1),
-(6, 7, 'USR389436', 'PWD214748', 1),
-(7, 8, 'USR389436', 'PWD214748', 1),
-(8, 9, 'USR503036', 'PWD713319', 1),
-(9, 10, 'USR447274', 'PWD420652', 1),
-(10, 11, 'USR486163', 'PWD790452', 1),
 (12, 2, 'rahulreghunath11@gmail.com', 'rahul', 2),
-(13, 12, 'USR568113', 'PWD334935', 1),
-(14, 13, 'USR280780', 'PWD906419', 1),
-(15, 14, 'USR295127', 'PWD195747', 1),
 (16, 3, 'vishnut300@gmail.com', 'vishnut300', 2);
 
 -- --------------------------------------------------------
@@ -247,12 +237,12 @@ INSERT INTO `tbl_shows` (`s_id`, `st_id`, `theatre_id`, `movie_id`, `start_date`
 (4, 12, 4, 2, '2017-05-01', 1, 1),
 (5, 1, 3, 1, '2017-05-01', 1, 1),
 (6, 2, 3, 1, '2017-05-01', 1, 1),
-(7, 3, 3, 1, '2017-05-01', 1, 1),
-(8, 4, 3, 1, '2017-05-01', 1, 1),
-(9, 5, 3, 2, '2017-05-01', 1, 1),
-(10, 6, 3, 2, '2017-05-01', 1, 1),
-(11, 7, 3, 2, '2017-05-01', 1, 1),
-(12, 8, 3, 2, '2017-05-01', 1, 1),
+(7, 3, 3, 1, '2017-05-01', 1, 0),
+(8, 4, 3, 1, '2017-05-01', 1, 0),
+(9, 5, 3, 2, '2017-05-01', 1, 0),
+(10, 6, 3, 2, '2017-05-01', 1, 0),
+(11, 7, 3, 2, '2017-05-01', 1, 0),
+(12, 8, 3, 2, '2017-05-01', 1, 0),
 (13, 1, 3, 10, '2017-02-25', 1, 0),
 (14, 2, 3, 10, '2017-02-25', 1, 0),
 (15, 9, 4, 8, '2017-05-28', 1, 0),

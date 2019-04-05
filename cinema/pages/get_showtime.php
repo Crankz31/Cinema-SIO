@@ -6,7 +6,7 @@
         while($time=mysqli_fetch_array($sr))
         {
             ?>
-            <option value="<?php echo $time['st_id'];?>"><?php echo $time['name']."( ".$time['start_time']." )";?></option>
+            <option value="<?php echo $time['st_id'];?>"><?php echo utf8_encode($time['name'])."( ".$time['start_time']." )";?></option>
             <?php
         }
     }
