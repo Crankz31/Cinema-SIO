@@ -1,39 +1,10 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
+
 <html>
-<head>
-<title>PROJET CINEMA SIO</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></script>
-<script src='js/jquery.color-RGBa-patch.js'></script>
-<script src='js/example.js'></script>
-</head>
+
 <body>
-<div class="header">
-	<div class="header-top">
-		<div class="wrap">
-			<div class="h-logo">
-			<a href="index.php"><img src="images/logo.png" alt=""/></a>
-		</div>
-			  <div class="nav-wrap">
-					<ul class="group" id="example-one">
-		           <li><a href="index.php">Accueil</a></li>
-			  		   <li><a href="movies_events.php">Films à l'affiche</a></li>
-			  		   <li class="current_page_item"><a href="contact.php">Contact</a></li>
-							 <li><?php if(isset($_SESSION['user'])){
-								$us=mysqli_query($con,"select * from tbl_registration where user_id='".$_SESSION['user']."'");
-								$user=mysqli_fetch_array($us);?><a href="profile.php"><?php echo $user['name'];?></a><a href="logout.php">Se déconnecter</a><?php }else{?><a href="login.php">Se connecter</a><?php }?></li>
-			        </ul>
-			  </div>
- 			<div class="clear"></div>
-   		</div>
-    </div>
+<?php
+include('header.php');
+?>
 <div class="content">
 	<div class="wrap">
 		<div class="content-top">
