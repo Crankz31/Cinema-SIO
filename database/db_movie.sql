@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 05 avr. 2019 à 12:50
+-- Généré le :  ven. 05 avr. 2019 à 14:13
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `marty`
+-- Base de données :  `sio_cinema`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `tbl_bookings` (
   `date` date NOT NULL,
   `status` int(1) NOT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_bookings`
@@ -54,7 +54,8 @@ INSERT INTO `tbl_bookings` (`book_id`, `ticket_id`, `t_id`, `user_id`, `show_id`
 (5, '', 3, 3, 6, 1, 200, 70, '2017-05-25', '2017-05-22', 1),
 (6, '', 3, 3, 6, 1, 100, 70, '2017-05-22', '2017-05-22', 1),
 (7, '', 3, 3, 5, 1, 1, 70, '2017-05-22', '2017-05-22', 1),
-(11, 'BKID5258816', 4, 2, 3, 3, 1, 75, '2017-05-22', '2017-05-22', 1);
+(11, 'BKID5258816', 4, 2, 3, 3, 1, 75, '2017-05-22', '2017-05-22', 1),
+(12, 'BKID947', 4, 2, 1, 3, 3, 21, '2019-04-05', '2019-04-05', 1);
 
 -- --------------------------------------------------------
 
@@ -137,7 +138,7 @@ INSERT INTO `tbl_movie` (`movie_id`, `t_id`, `movie_name`, `cast`, `desc`, `rele
 (1, 3, 'Arnold le magnifque', 'Arnold Schwarzenegger', 'Ce film suit la progression d\'Arnold Schwarzenegger vers son 6e titre de Mr. Olympia, à 28 ans.', '2018-01-01', 'images/arnold_le_magnifique_poster.jpg', 'https://www.youtube.com/watch?v=rq45GnjuIlE', 0),
 (2, 3, 'Coach Carter', 'Samuel L. Jackson', 'L\'histoire vraie de Ken Carter, l\'entraîneur de basket d\'une &eacutequipe de basket-ball de lyc&eacutee, qui devint c&eacutelèbre en 1999 après avoir renvoy&eacute ses joueurs à leurs chères &eacutetudes, d&eacuteclarant forfait 2 matchs de suite alors que l\'&eacutequipe &eacutetait invaincue, parce que ces derniers n\'avaient pas obtenu des r&eacutesultats scolaires suffisants.', '2018-05-12', 'images/coach_carter_poster.jpg', 'https://www.youtube.com/watch?v=znyAnWUYf2g', 0),
 (3, 3, 'Creed', 'Sylvester Stalone, Michael B. Jordan', 'Adonis Johnson n\'a jamais connu son père, le c&eacutelèbre champion du monde poids lourd Apollo Creed d&eacutec&eacuted&eacute avant sa naissance. Pourtant, il a la boxe dans le sang et d&eacutecide d\'être entraîn&eacute par le meilleur de sa cat&eacutegorie. À Philadelphie, il retrouve la trace de Rocky Balboa, que son père avait affront&eacute autrefois, et lui demande de devenir son entraîneur. D\'abord r&eacuteticent, l\'ancien champion d&eacutecèle une force in&eacutebranlable chez Adonis et finit par accepter', '2015-05-12', 'images/creed_poster.jpg', 'https://www.youtube.com/watch?v=Uv554B7YHk4', 0),
-(5, 3, 'Invictus', 'Morgan Freeman, Matt Demon', '&eacute', '2017-05-12', 'images/invictus_poster.jpg', 'https://www.youtube.com/watch?v=Vhl2Zl_QQhE', 0);
+(5, 3, 'Invictus', 'Morgan Freeman, Matt Demon', 'En 1995, l\'Afrique du Sud organise la coupe du monde de rugby à XV. Nelson Mandela commence son mandat en tant que président du pays. Contre l\'opinion de ses partisans, il sent dans l\'événement sportif la possibilité de créer un sentiment d\'union nationale derrière l\'équipe des Springboks, symbole durant plusieurs décennies des Blancs d\'Afrique du Sud, de leur domination et de l\'apartheid (1948-1991). « One team, one country » (« une équipe, un pays »).', '2017-05-12', 'images/invictus_poster.jpg', 'https://www.youtube.com/watch?v=Vhl2Zl_QQhE', 0);
 
 -- --------------------------------------------------------
 
@@ -161,9 +162,9 @@ CREATE TABLE IF NOT EXISTS `tbl_news` (
 --
 
 INSERT INTO `tbl_news` (`news_id`, `name`, `cast`, `news_date`, `description`, `attachment`) VALUES
-(6, 'Million Dollar Baby', 'Clint Estawood, Morgan Freeman', '2017-06-15', 'Rejet&eacute depuis longtemps par sa fille, lentraîneur Frankie Dunn sest repli&eacute sur lui-même et vit dans un d&eacutesert affectif. Le jour où Maggie Fitzgerald, 31 ans, pousse la porte de son g', 'news_images/million_dollar_baby_poster.jpg'),
-(7, 'The Art Of Flight', 'Travis Rice', '2017-07-21', 'A mi-chemin entre le documentaire et le road movie, ce film est centr&eacute sur Travis Rice, v&eacuteritable l&eacutegende du snowboard, et ses amis, repoussant sans cesse les limites des sports extr', 'news_images/the_art_of_flight_poster.jpg'),
-(8, 'Tyson', 'Mike Tyson', '2017-10-18', 'A travers des images darchives et son t&eacutemoignage, Mike Tyson retrace sa carrière. De ses premiers souvenirs denfance jusquà ses dilemmes actuels, lathlète controvers&eacute revient sur son enfan', 'news_images/tyson_poster.jpg');
+(6, 'Million Dollar Baby', 'Clint Estawood, Morgan Freeman', '2019-06-01', 'Rejet&eacute depuis longtemps par sa fille, lentraîneur Frankie Dunn sest repli&eacute sur lui-même et vit dans un d&eacutesert affectif. Le jour où Maggie Fitzgerald, 31 ans, pousse la porte de son g', 'news_images/million_dollar_baby_poster.jpg'),
+(7, 'The Art Of Flight', 'Travis Rice', '2019-06-15', 'A mi-chemin entre le documentaire et le road movie, ce film est centr&eacute sur Travis Rice, v&eacuteritable l&eacutegende du snowboard, et ses amis, repoussant sans cesse les limites des sports extr', 'news_images/the_art_of_flight_poster.jpg'),
+(8, 'Tyson', 'Mike Tyson', '2019-10-05', 'A travers des images darchives et son t&eacutemoignage, Mike Tyson retrace sa carrière. De ses premiers souvenirs denfance jusquà ses dilemmes actuels, lathlète controvers&eacute revient sur son enfan', 'news_images/tyson_poster.jpg');
 
 -- --------------------------------------------------------
 
