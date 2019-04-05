@@ -1,6 +1,6 @@
 # Cinema-SIO
 this project is for our final exam of BTS 
-it is a website for a chain of cinema and customers can reserved their seat online
+it is a website for a chain of cinema where customers can reserved their seat online
 the code of the website is PHP,HTML,CSS,JS and some framework like boostrap
 
 #Getting Started :
