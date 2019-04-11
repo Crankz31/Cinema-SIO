@@ -16,10 +16,7 @@
                     <div class="col_1_of_4 span_1_of_4">
 					<div class="imageRow">
 						  	<div class="single">
-						  		<?php
-						
-						?>
-						  		<a href="about.php?id=<?php echo $m['movie_id'];?>"><img src="<?php echo $m['image'];?>" alt="" /></a>
+						  		<a href="about.php?id=<?php echo $m['movie_id'];?>"><img height=300 src="<?php echo $m['image'];?>" alt="" /></a>
 						  	</div>
 						  	<div class="movie-text">
 						  		<h4 class="h-text"><a href="about.php?id=<?php echo $m['movie_id'];?>"><?php echo $m['movie_name'];?></a></h4>
