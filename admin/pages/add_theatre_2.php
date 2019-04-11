@@ -7,6 +7,7 @@ include('header.php');
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+         <div class="box-header with-border">
       <h1>
         Caractéristiques du Cinema
       </h1>
@@ -22,7 +23,6 @@ include('header.php');
 
       <!-- Default box --> 
       <div class="box">
-         <div class="box-header with-border">
               <h3 class="box-title">Caractéristiques Général</h3>
             </div>
         <div class="box-body">
