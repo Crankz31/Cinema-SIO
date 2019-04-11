@@ -11,9 +11,6 @@
                     ?>
             <div class="content-left">
 					<div class="listimg listimg_1_of_2">
-					<?php
-						
-						?>
 						 <a href="about.php?id=<?php echo $m['movie_id'];?>"><img src="<?php echo $m['image'];?>"></a>
 					</div>
 					<div class="text list_1_of_2">
