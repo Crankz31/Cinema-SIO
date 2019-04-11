@@ -8,7 +8,7 @@ include('header.php');
   <?php
     include('../../form.php');
     $frm=new formBuilder;    
-    $_SESSION['add'] = 0;  
+     
   ?>   
   <!-- =============================================== -->
 
@@ -18,15 +18,9 @@ include('header.php');
     <section class="content-header">
       <h1>
         Ajouter un nouveau film
+
       </h1>
-      <?php
-      if($_SESSION['add'] == 11111)
-      {?>
-          <div class="alert alert-success">
-            <strong>Succes!</strong> Ajout réalisé avec succès ..
-          </div>
-<?php
-}?>
+      <?php include('../../msgbox.php');?>
       <ol class="breadcrumb">
         <li><a href="index.php"><i class="fa fa-home"></i> Accueil</a></li>
         <li class="active">Ajouter un film </li>
