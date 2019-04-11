@@ -130,7 +130,7 @@ class formBuilder
                     $err_msg="Enter a valid $label";
                     break;
                 case "mobile":
-                    $expression='/^([0|\+[9][1]{1,5})?([7-9][0-9]{9})$/';
+                    $expression='/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/';  
                     $err_msg="Enter a valid $label";
                     break;
                 case "phone":

@@ -23,7 +23,7 @@ include('header.php');
 						    </div>
 						    <div>
 						     	<span><label>Numéro de téléphone</label></span>
-						    	<span><input type="number" value="" required name="mobile"></span>
+						    	<span><input type="mobile" value="" required name="mobile"></span>
 						    </div>
 						    <div>
 						    	<span><label>Sujet</label></span>
