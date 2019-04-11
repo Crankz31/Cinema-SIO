@@ -2,6 +2,7 @@
 include('config.php');
 session_start();
 date_default_timezone_set('Europe/Paris');
+
 ?>
 <!--
 Author: W3layouts
@@ -33,16 +34,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<a href="index.php"><img src="images/logo.png" alt=""/></a>
 
 			</div>
-
-
-        		<form action="process_search.php" id="reservation-form" method="post" onsubmit="myFunction()">
-		    	<fieldset>
-		       	<div class="field" >
-                    <input type="text" placeholder="Chercher un film..." style="height:27px;width:500px"  required id="search111" name="search"> 
-                    <input type="submit" value="Search" style="height:28px;padding-top:4px" id="button111">
-    			</div>       	
-				</fieldset>
-			    </form>
             	<nav class="nav-wrap">
 					<ul class="group" id="example-one">
 			        	<li><a href="index.php">Accueil</a></li>

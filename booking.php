@@ -94,10 +94,10 @@ if(!isset($_SESSION['user']))
 									</tr>
 									<tr>
 										<td>
-											Date du film
+											Info séance
 										</td>
 										<td>
-											<?php echo date('h:i A',strtotime($ttme['start_time']))." ".$ttme['name'];?> Voir
+											<?php echo date('h:i',strtotime($ttme['start_time']))." ".utf8_encode ($ttme['name']);?>
 										</td>
 									</tr>
 									<tr>
@@ -122,7 +122,7 @@ if(!isset($_SESSION['user']))
 									</tr>
 									<tr>
 										<td colspan="2"><?php if($avl[0]==$screen['seats']){?><button type="button" class="btn btn-danger" style="width:100%">La salle est pleine</button><?php } else { ?>
-										<button class="btn btn-info" style="width:100%">Réservez maintenant </button>
+										<button class="btn btn-info" style="width:100%">Réserver maintenant </button>
 										<?php } ?>
 										</form></td>
 									</tr>

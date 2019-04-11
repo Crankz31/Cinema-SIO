@@ -24,7 +24,7 @@ if(!isset($_SESSION['user']))
 						<th>Film</th>
 						<th>Cinéma</th>
 						<th>Salle</th>
-						<th>Heure</th>
+						<th>Info séance</th>
 						<th>Nb de siège</th>
 						<th>Montant</th>
 						<th></th>
@@ -56,13 +56,13 @@ if(!isset($_SESSION['user']))
 									<?php echo $srn['screen_name'];?>
 								</td>
 								<td>
-									<?php echo $stm['name'];?>
+									<?php echo utf8_encode ($stm['name']);?>
 								</td>
 								<td>
 									<?php echo $bkg['no_seats'];?>
 								</td>
 								<td>
-									Rs <?php echo $bkg['amount'];?>
+									<?php echo $bkg['amount'];?>  €
 								</td>
 								<td>
 									<?php  if($bkg['ticket_date']<date('Y-m-d'))

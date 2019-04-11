@@ -21,13 +21,13 @@ include('header.php');
 					</div>
 					<div class="text list_1_of_2">
 						  <div class="extra-wrap">
-						  	<span style="text-color:#000" class="data"><strong><?php echo $n['name'];?></strong><br>
-						  	<span style="text-color:#000" class="data"><strong>Acteurs :<?php echo $n['cast'];?></strong><br>
+						  	<span style="text-color:#000" class="data"><strong><?php echo utf8_encode ($n['name']);?></strong><br>
+						  	<span style="text-color:#000" class="data"><strong>Acteurs :<?php echo utf8_encode ($n['cast']);?></strong><br>
                                 <div class="data">Date de sortie :<?php echo $n['news_date'];?></div>
                                 
                                 
                                 
-                                <span class="text-top"><?php echo $n['description'];?></span>
+                                <span class="text-top"><?php echo utf8_encode($n['description']);?></span>
                           </div>
 					</div>
 					<div class="clear"></div>

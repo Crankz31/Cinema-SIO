@@ -7,15 +7,16 @@ if(!isset($_SESSION['user']))
 }
 include('config.php');
 extract($_POST);
-if($otp=="123456")
+$otp=""; // REMOVE TO ENABLE OTP FROM BANK FORM
+if($otp=="") // PUT VARIABLE IF YOU WANT ENABLE OTP AUTH
 {
-    $bookid="BKID".rand(1000000,9999999);
+    $bookid="BKID".rand(100,999);
     mysqli_query($con,"insert into tbl_bookings values(NULL,'$bookid','".$_SESSION['theatre']."','".$_SESSION['user']."','".$_SESSION['show']."','".$_SESSION['screen']."','".$_SESSION['seats']."','".$_SESSION['amount']."','".$_SESSION['date']."',CURDATE(),'1')");
-    $_SESSION['success']="Booking Successfully Completed";
+    $_SESSION['success']="La réservation a été effectué avec succès.";
 }
 else
 {
-    $_SESSION['error']="Payment Failed";
+    $_SESSION['error']="Paiement échoué.";
 }
 ?>
 <body><table align='center'><tr><td><STRONG>Transaction en cours,</STRONG></td></tr><tr><td><font color='blue'>Patientez SVP <i class="fa fa-spinner fa-pulse fa-fw"></i>
