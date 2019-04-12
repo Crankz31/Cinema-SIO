@@ -67,7 +67,7 @@ include('header.php');
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="textcontact">
-						<p>GOMB CINEMA<br>
+						<p>GOB CINEMA<br>
 						2 Rue George Ledormeur<br>
 						65000 Tarbes<br>
 					

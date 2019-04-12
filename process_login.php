@@ -21,10 +21,12 @@ if(mysqli_num_rows($qry))
 	}
 	elseif($usr['user_type']==0)
 	{
+		$_SESSION['admin']=$usr['user_id'];
 		header('location:admin/pages/index.php');
 	}
 	elseif ($usr['user_type']==1) 
 	{
+		$_SESSION['theatre']=$usr['user_id'];
 		header('location:cinema/pages/index.php');
 	}
 	else

@@ -13,7 +13,7 @@ include('../../config.php');
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>GOMB CINEMA | Admin</title>
+  <title>GOB CINEMA | Admin</title>
   <!-- valodation -->
   <script type="text/javascript" src="../validation/vendor/jquery/jquery-1.10.2.min.js"></script>
   <link rel="stylesheet" href="../validation/dist/css/bootstrapValidator.css"/> 
@@ -47,7 +47,7 @@ include('../../config.php');
     <!-- Logo -->
     <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>GOMB</b></span>
+      <span class="logo-mini"><b>GOB</b></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Gestionnaire</b></span>
     </a>
@@ -71,7 +71,7 @@ include('../../config.php');
                 <img src="admin.png" class="img-circle" alt="User Image">
 
                 <p>
-                  GOMB Admin
+                  GOB Admin
                 </p>
               </li>
               <li class="user-footer">
