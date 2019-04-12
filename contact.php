@@ -27,14 +27,13 @@ include('header.php');
 						    </div>
 						    <div>
 						    	<span><label>Sujet</label></span>
-						    	<span><textarea required name="subect"> </textarea></span>
-							</div>
+						    	<span><textarea required name="subject"> </textarea></span>
+						    </div>
 							<div>
-								<button class="btn btn-success"> Envoyer </button>
-							</div>
-						</form>
-					</div>
-				
+						   		<span><input type="submit"></span>
+						  </div>
+					    </form>
+				  </div>
   				</div>
 				<div class="col span_1_of_3">
 					<div class="contact_info">
@@ -56,23 +55,26 @@ include('header.php');
 </div>
 <div class="footer">
 	<div class="wrap">
-		<div class="footer-top">
-			<div class="col_1_of_4 span_1_of_4">
-				<div class="footer-nav">
-	                <ul>
-                  		<li><a href="index.php">Accueil</a></li>
-		            	<li><a href="movies_events.php">Films à l'affiche</a></li>
-						<li><a href="contact.php">Contact</a></li>
-						<li><a href="login.php">Connexion</a></li>	                      
-	                </ul>
-	        	</div>
-			</div>
-			<div class="col_1_of_4 span_1_of_4">
-				<div class="textcontact">
-					<p>GOMB CINEMA<br>
-					2 Rue George Ledormeur<br>
-					65000 Tarbes<br>
-					</p>
+			<div class="footer-top">
+				<div class="col_1_of_4 span_1_of_4">
+					<div class="footer-nav">
+		                <ul>
+		                  		<li><a href="index.php">Accueil</a></li>
+		                    	<li><a href="movies_events.php">Films à l'affiche</a></li>
+													<li><a href="contact.php">Contact</a></li>
+													<li><a href="login.php">Connexion</a></li>
+		                      
+		                   </ul>
+		              </div>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<div class="textcontact">
+						<p>GOB CINEMA<br>
+						2 Rue George Ledormeur<br>
+						65000 Tarbes<br>
+					
+						</p>
+					</div>
 				</div>
 			</div>
 			<div class="col_1_of_4 span_1_of_4">

@@ -307,8 +307,8 @@ CREATE TABLE IF NOT EXISTS `tbl_theatre` (
 --
 
 INSERT INTO `tbl_theatre` (`id`, `name`, `address`, `place`, `state`, `pin`) VALUES
-(3, 'GOMB Centre', '2 Rue Georges Ledormeur', 'Tarbes', 'Occitanie', 65000),
-(4, 'GOMB Gare', '14 Rue Victor Hugo', 'Tarbes', 'Occitanie', 65000);
+(3, 'GOB Centre', '2 Rue Georges Ledormeur', 'Tarbes', 'Occitanie', 65000),
+(4, 'GOB Gare', '14 Rue Victor Hugo', 'Tarbes', 'Occitanie', 65000);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

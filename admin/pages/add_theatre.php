@@ -57,7 +57,7 @@ include('header.php');
               </div>
               <?php
                 start:
-                $username="GOMB_".rand(123456,999999);
+                $username="GOB_".rand(123456,999999);
                 $u=mysqli_query($con,"select * from tbl_login where username='$username'");
                 if(mysqli_num_rows($u))
                 {
