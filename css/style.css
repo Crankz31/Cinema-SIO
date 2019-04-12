@@ -33,7 +33,7 @@ img{max-width:100%;}
     src: url( ../fonts/Amble-Light-webfont.ttf ) format("truetype"); 
 }
 body{
-	font-family: 'AmbleRegular';
+	font-family: 'Arial';
 	background:#fff;
 }
 .header{

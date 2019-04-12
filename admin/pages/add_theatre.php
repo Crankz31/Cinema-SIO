@@ -77,10 +77,6 @@ include('header.php');
               <div class="form-group">
                 <button class="btn btn-success">Ajouter le cinéma</button>
               </div>
-              <input type="hidden" name="country" class="form-control" id="country">
-              <input type="hidden" class="field" id="route" disabled="true">
-              <input type="hidden" class="field" id="street_number" disabled="true">
-              <input type="hidden" class="field" id="locality"disabled="true">
             </form>
         </div> 
         <!-- /.box-footer-->
