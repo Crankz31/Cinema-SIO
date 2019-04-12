@@ -27,9 +27,11 @@ include('header.php');
 						    </div>
 						    <div>
 						    	<span><label>Sujet</label></span>
-						    	<span><textarea required name="subect"> </textarea></span>
+						    	<span><textarea required name="subject"> </textarea></span>
 						    </div>
-						   
+							<div>
+						   		<span><input type="submit"></span>
+						  </div>
 					    </form>
 				  </div>
   				</div>

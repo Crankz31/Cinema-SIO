@@ -133,6 +133,14 @@ include('../../config.php');
             </span>
           </a>
         </li>
+        <li class="treeview">
+          <a href="contact.php">
+            <i class="fa fa-plus"></i> <span>Consulter les messages</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        </li>
         
         
       </ul>
