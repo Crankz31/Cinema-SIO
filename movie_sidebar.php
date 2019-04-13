@@ -18,7 +18,7 @@
                                          <a href="about.php?id=<?php echo $m['movie_id'];?>" class="link4"><?php echo $m['movie_name'];?></a><br>
                                         <span class="data">Date de sortie:<?php echo $m['release_date'];?></span><br>
                                         Acteurs:<Span class="data"><?php echo utf8_encode ($m['cast']);?></span><br>
-                                        Description: <span" class="text-top"><?php echo utf8_encode ($m['desc']);?></span><br>
+                                        Description: <span class="text-top"><?php echo utf8_encode ($m['desc']);?></span><br>
 																				<hr>
                                     </div>
 					</div>

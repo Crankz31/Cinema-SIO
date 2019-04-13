@@ -9,26 +9,26 @@ if(!isset($_SESSION['user']))
 <div class="content">
 	<div class="wrap">
 		<div class="content-top">
-				<div class="section group">
-					<div class="about span_1_of_2">	
-						<h3>Réservations</h3>
-						<?php include('msgbox.php');?>
-						<?php
-				$bk=mysqli_query($con,"select * from tbl_bookings where user_id='".$_SESSION['user']."'");
-				if(mysqli_num_rows($bk))
-				{
+			<div class="section group">
+				<div class="about span_1_of_2">	
+					<h3>Réservations</h3>
+					<?php include('msgbox.php');?>
+					<?php
+					$bk=mysqli_query($con,"select * from tbl_bookings where user_id='".$_SESSION['user']."'");
+					if(mysqli_num_rows($bk))
+					{
 					?>
-					<table class="table table-bordered">
-						<thead>
-						<th>Reservation n°</th>
-						<th>Film</th>
-						<th>Cinéma</th>
-						<th>Salle</th>
-						<th>Info séance</th>
-						<th>Nb de siège</th>
-						<th>Montant</th>
-						<th></th>
-						</thead>
+						<table class="table table-bordered">
+							<thead>
+								<th>Reservation n°</th>
+								<th>Film</th>
+								<th>Cinéma</th>
+								<th>Salle</th>
+								<th>Info séance</th>
+								<th>Nb de siège</th>
+								<th>Montant</th>
+								<th></th>
+							</thead>
 						<tbody>
 						<?php
 						while($bkg=mysqli_fetch_array($bk))
