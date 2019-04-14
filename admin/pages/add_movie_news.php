@@ -62,7 +62,7 @@ include('header.php');
                <?php $frm->validate("attachment",array("required","label"=>"Image")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
-              <button class="btn btn-success">Add News</button>
+              <button class="btn btn-success">Ajouter un film</button>
         </form>
         </div> 
         <!-- /.box-footer-->
@@ -77,4 +77,4 @@ include('footer.php');
 ?>
 <script>
         <?php $frm->applyvalidations("form1");?>
-    </script>
+</script>
