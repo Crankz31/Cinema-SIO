@@ -28,7 +28,7 @@ include('header.php');
               <?php include('../../msgbox.php');?>
               <ul class="todo-list">
                  <?php 
-                        $qry7=mysqli_query($con,"select * from tbl_movie");
+                        $qry7=mysqli_query($con,"select * from tbl_news");
                         if(mysqli_num_rows($qry7))
                         {
                         while($c=mysqli_fetch_array($qry7))
@@ -42,13 +42,13 @@ include('header.php');
                       </span>
                   <!-- checkbox -->
                   <!-- todo text -->
-                  <span class="text"><?php echo $c['movie_name'];?></span>
+                  <span class="text"><?php echo $c['name'];?></span>
                   <!-- Emphasis label -->
                   
                   <!-- General tools such as edit or delete-->
                   <div class="tools">
                     
-                    <button class="fa fa-trash-o" onclick="del(<?php echo $c['movie_id'];?>)"></button>
+                    <button class="fa fa-trash-o" onclick="del(<?php echo $c['news_id'];?>)"></button>
                   </div>
                 </li>
                   <?php

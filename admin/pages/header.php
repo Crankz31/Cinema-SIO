@@ -127,7 +127,7 @@ include('../../config.php');
         </li>
         <li class="treeview">
           <a href="add_movie_news.php">
-            <i class="fa fa-plus"></i> <span>Ajouter un films a l'affiche</span>
+            <i class="fa fa-plus"></i> <span>Ajouter un films à venir</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

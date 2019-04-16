@@ -33,6 +33,7 @@ include('header.php');
                 <tr>
                     <td class="col-md-6">Nom du cinéma</td>
                     <td  class="col-md-6"><?php echo $theatre['name'];?></td>
+                    <td> <?php echo $_SESSION['theatre'] ?>
                 </tr>
                 <tr>
                     <td>Adresse du cinéma</td>
