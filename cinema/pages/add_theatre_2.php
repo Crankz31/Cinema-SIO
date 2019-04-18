@@ -25,10 +25,8 @@ include('header.php');
               <h3 class="box-title">Informations générale</h3>
             </div>
         <div class="box-body">
-          <?php
-            $th=mysqli_query($con,"select * from tbl_theatre where id='".$_SESSION['theatre']."'");
-            $theatre=mysqli_fetch_array($th);
-          ?>
+          <?php $th=mysqli_query($con,"select * from tbl_theatre where id='".$_SESSION['theatre']."'");
+            $theatre=mysqli_fetch_array($th); ?>
             <table class="table table-bordered table-hover">
                 <tr>
                     <td class="col-md-6">Nom du cinéma</td>
