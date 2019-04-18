@@ -12,6 +12,6 @@
     
     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
     
-    $_SESSION['success']="Movie Added";
+    $_SESSION['success']="Film ajouté";
     header('location:add_movie.php');
 ?>

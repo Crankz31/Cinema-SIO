@@ -44,8 +44,8 @@ include('header.php');
             </div>
             <div class="form-group">
               <label class="control-label">Description</label>
-              <textarea name="desc" class="form-control"></textarea>
-              <?php $frm->validate("desc",array("required","label"=>"Description")); // Validating form using form builder written in form.php ?>
+              <textarea name="description" class="form-control"></textarea>
+              <?php $frm->validate("description",array("required","label"=>"Description")); // Validating form using form builder written in form.php ?>
             </div>
             <div class="form-group">
               <label class="control-label">Date de sortie</label>
@@ -66,7 +66,7 @@ include('header.php');
               <button type="submit" class="btn btn-success">Ajouter</button>
             </div>
           </form>
-        </div> 
+        </div>
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->
