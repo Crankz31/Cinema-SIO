@@ -15,7 +15,7 @@
 								<div class="desc span_3_of_2">
 									<p class="p-link" style="font-size:15px">Acteurs : <?php echo utf8_encode($movie['cast']); ?></p>
 									<p class="p-link" style="font-size:15px">Date de sortie : <?php echo date('d-M-Y',strtotime($movie['release_date'])); ?></p>
-									<p style="font-size:15px"><?php echo utf8_encode($movie['desc']); ?></p>
+									<p style="font-size:15px"><?php echo utf8_encode($movie['description']); ?></p>
 									<a href="<?php echo $movie['video_url']; ?>" target="_blank" class="watch_but">Voir la bande annonce</a>
 								</div>
 								<div class="clear"></div>

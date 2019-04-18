@@ -26,7 +26,7 @@ if(mysqli_num_rows($qry))
 	}
 	elseif ($usr['user_type']==1) 
 	{
-		$_SESSION['theatre']=$usr['user_id'];
+		$_SESSION['theatre']=$usr['id'];
 		header('location:cinema/pages/index.php');
 	}
 	else
