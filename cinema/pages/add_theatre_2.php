@@ -33,7 +33,6 @@ include('header.php');
                 <tr>
                     <td class="col-md-6">Nom du cinéma</td>
                     <td  class="col-md-6"><?php echo $theatre['name'];?></td>
-                    <td> <?php echo $_SESSION['theatre'] ?>
                 </tr>
                 <tr>
                     <td>Adresse du cinéma</td>
@@ -84,8 +83,8 @@ include('header.php');
                     <td><?php echo $screen['charge'];?></td>
                     <?php 
                       $st=mysqli_query($con,"select * from tbl_show_time where screen_id='".$screen['screen_id']."'");
-                    ?>
-                    <td><?php if(mysqli_num_rows($st)) { while($stm=mysqli_fetch_array($st))
+                      if(mysqli_num_rows($st)) { while($stm=mysqli_fetch_array($st))
+                    
                     { echo date('h:i a',strtotime($stm['start_time']))." ,";}}
                     else
                     {echo "No Show Time Added";}
