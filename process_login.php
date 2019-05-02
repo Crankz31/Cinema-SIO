@@ -21,12 +21,14 @@ if(mysqli_num_rows($qry))
 	}
 	elseif($usr['user_type']==0)
 	{
-		$_SESSION['admin']=$usr['user_id'];
+		$_SESSION['admin']=$usr['id'];
 		header('location:admin/pages/index.php');
 	}
 	elseif ($usr['user_type']==1) 
 	{
-		$_SESSION['theatre']=$usr['id'];
+		$qth=mysqli_query($con,"select * from tbl_theatre where id_log='".$usr['id']."'");
+		$uth=mysqli_fetch_array($qth);
+		$_SESSION['theatre']=$uth['id'];
 		header('location:cinema/pages/index.php');
 	}
 	else

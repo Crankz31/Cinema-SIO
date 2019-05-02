@@ -55,23 +55,14 @@ include('header.php');
                  <input type="text" name="pin" id="postal_code"s placeholder="Code postal" class="form-control">
                  <?php $frm->validate("pin",array("required","label"=>"Pin Code","regexp"=>"pin")); // Validating form using form builder written in form.php ?>
               </div>
-              <?php
-                start:
-                $username="GOB_".rand(123456,999999);
-                $u=mysqli_query($con,"select * from tbl_login where username='$username'");
-                if(mysqli_num_rows($u))
-                {
-                  goto start;
-                }
-              ?>
               <div class="form-group">
                 <label class="control-label">ID du compte cinéma</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username ?>">
+                <input type="text" name="username" class="form-control">
                 <?php $frm->validate("username",array("required","label"=>"Username")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">
                 <label class="control-label">Mot de passe du compte cinéma</label>
-                <input type="text" name="password" class="form-control" value="<?php echo "PWD".rand(123456,999999);?>">
+                <input type="text" name="password" class="form-control">
                 <?php $frm->validate("password",array("required","label"=>"Password")); // Validating form using form builder written in form.php ?>
               </div>
               <div class="form-group">

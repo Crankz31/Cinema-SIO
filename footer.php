@@ -62,35 +62,3 @@
 }
 
 </style>
-
-<script src="js/auto-complete.js"></script>
- <link rel="stylesheet" href="css/auto-complete.css">
-    <script>
-        var demo1 = new autoComplete({
-            selector: '#search111',
-            minChars: 1,
-            source: function(term, suggest){
-                term = term.toLowerCase();
-                <?php
-						$qry2=mysqli_query($con,"select * from tbl_movie");
-						?>
-               var string="";
-                <?php $string="";
-                while($ss=mysqli_fetch_array($qry2))
-                {
-                
-                $string .="'".strtoupper($ss['movie_name'])."'".",";
-                //$string=implode(',',$string);
-                
-              
-                }
-                ?>
-                //alert("<?php echo $string;?>");
-              var choices=[<?php echo $string;?>];
-                var suggestions = [];
-                for (i=0;i<choices.length;i++)
-                    if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
-                suggest(suggestions);
-            }
-        });
-    </script>

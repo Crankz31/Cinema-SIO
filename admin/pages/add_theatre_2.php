@@ -24,10 +24,10 @@ include('header.php');
       <!-- Default box --> 
       <div class="box">
               <h3 class="box-title">Caractéristiques Général</h3>
-            </div>
+      </div>
         <div class="box-body">
           <?php
-            $th=mysqli_query($con,"select * from tbl_theatre where id='".$_GET['id']."'");
+            $th=mysqli_query($con,"select * from tbl_theatre where id_log='".$_GET['id']."'");
             $theatre=mysqli_fetch_array($th);
           ?>
             <table class="table table-bordered table-hover">
