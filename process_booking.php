@@ -49,14 +49,14 @@ if(!isset($_SESSION['user']))
 <?php include('footer.php');?>
 </div>
 <?php
-    session_start();
+    //session_start();
     extract($_POST);
     include('config.php');
     $_SESSION['screen']=$screen;
     $_SESSION['seats']=$seats;
     $_SESSION['amount']=$amount;
     $_SESSION['date']=$date;
-    header('location:bank.php');
+    //header('location:bank.php');
 ?>
 <script>
         $(document).ready(function() {

@@ -10,8 +10,8 @@ extract($_POST);
 $otp=""; // REMOVE TO ENABLE OTP FROM BANK FORM
 if($otp=="") // PUT VARIABLE IF YOU WANT ENABLE OTP AUTH
 {
-    $bookid="BKID".rand(100,999);
-    mysqli_query($con,"insert into tbl_bookings values(NULL,'$bookid','".$_SESSION['theatre']."','".$_SESSION['user']."','".$_SESSION['show']."','".$_SESSION['screen']."','".$_SESSION['seats']."','".$_SESSION['amount']."','".$_SESSION['date']."',CURDATE(),'1')");
+    $ticket_id=rand(100,999);
+    mysqli_query($con,"insert into tbl_bookings (ticket_id,t_id,user_id,show_id,screen_id,no_seats,amount,ticket_date,date,status) values('$ticket_id','".$_SESSION['theatre']."','".$_SESSION['user']."','".$_SESSION['show']."','".$_SESSION['screen']."','".$_SESSION['seats']."','".$_SESSION['amount']."','".$_SESSION['date']."',CURDATE(),'1')");
     $_SESSION['success']="La réservation a été effectué avec succès.";
 }
 else

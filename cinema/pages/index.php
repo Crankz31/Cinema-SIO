@@ -31,14 +31,12 @@ include('header.php');
             <div class="box-body no-padding">
               <table class="table table-condensed">
                 <tr>
-                  <th class="col-md-1">ID séance</th>
                   <th class="col-md-3">Salle</th>
                   <th class="col-md-4">Heure de séance</th>
                   <th class="col-md-4">Film</th>
                 </tr>
                 <?php 
 					$qry8=mysqli_query($con,"select * from tbl_shows where r_status=1 and theatre_id='".$_SESSION['theatre']."'");
-					$no=1;
 					while($mn=mysqli_fetch_array($qry8))
 					{
 					 $qry9=mysqli_query($con,"select * from tbl_movie where movie_id='".$mn['movie_id']."'");
@@ -49,13 +47,12 @@ include('header.php');
 					 $scn=mysqli_fetch_array($qry11);
 					?>
                 <tr>
-                  <td><?php echo $no;?></td>
                   <td><span class="badge bg-green"><?php echo $scn['screen_name'];?></span></td>
                   <td><span class="badge bg-light-blue"><?php echo $scr['start_time'];?>(<?php echo utf8_encode($scr['name']);?>)</span></td>
                   <td><?php echo $mov['movie_name'];?></td>
                   </tr>
                   <?php
-					       $no=$no+1;
+
 					  
 					}
                   ?>

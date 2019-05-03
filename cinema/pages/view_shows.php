@@ -30,9 +30,6 @@ include('header.php');
           if(mysqli_num_rows($sw))
           {?>
             <table class="table">
-              <th class="col-md-1">
-               ID Séance
-              </th>
               <th class="col-md-2">
                 Salle
               </th>
@@ -51,9 +48,6 @@ include('header.php');
               {
                 ?>
                 <tr>
-                  <td>
-                    <?php echo $sl; $sl++;?>
-                  </td>
                   <?php
                   $st=mysqli_query($con,"select * from tbl_show_time where st_id='".$shows['st_id']."'");
                   $show_time=mysqli_fetch_array($st);

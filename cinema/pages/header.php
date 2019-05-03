@@ -5,8 +5,9 @@ if(!isset($_SESSION['theatre']))
 {
   header('location:../index.php');
 }
-date_default_timezone_set('Asia/Kolkata');
+date_default_timezone_set('Europe/Paris');
 include('../../config.php');
+
 $th=mysqli_query($con,"select * from tbl_theatre where id='".$_SESSION['theatre']."'");
 $theatre=mysqli_fetch_array($th);
 ?>
@@ -82,10 +83,6 @@ $theatre=mysqli_fetch_array($th);
                 </div>
               </li>
             </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li>
         </ul>
       </div>

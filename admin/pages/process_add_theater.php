@@ -12,8 +12,8 @@
     mysqli_query($con,"insert into  tbl_login (username,password,user_type) values('$username','$password','1')");
     $id=mysqli_insert_id($con);
     mysqli_query($con,"insert into  tbl_theatre (name,address,place,state,pin,id_log) values('$name','$address','$place','$state','$pin','$id')");
-     
+     $idt = mysqli_insert_id($con);
     
     
-    header('location:add_theatre_2.php?id='.$id);
+    header('location:add_theatre_2.php?id='.$idt);
 ?>

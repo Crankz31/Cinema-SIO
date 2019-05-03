@@ -97,7 +97,7 @@ if(!isset($_SESSION['user']))
 											Info séance
 										</td>
 										<td>
-											<?php echo date('h:i',strtotime($ttme['start_time']))." ".utf8_encode ($ttme['name']);?>
+											<?php echo date('H:i',strtotime($ttme['start_time']))." ".utf8_encode ($ttme['name']);?>
 										</td>
 									</tr>
 									<tr>

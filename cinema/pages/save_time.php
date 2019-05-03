@@ -5,6 +5,7 @@
     $sname = utf8_decode(addslashes($sname));
     $time = utf8_decode(addslashes($time));
     $screen = utf8_decode(addslashes($screen)); 
-
-    mysqli_query($con,"insert into tbl_show_time values(NULL,'$screen','$sname','$time')");
+    mysqli_query($con,"insert into tbl_show_time (screen_id,name,start_time) values('$screen','$sname','$time')");
+    
+    
 ?>

@@ -36,7 +36,7 @@
 											<?php echo $theatre['name'].", ".$theatre['place'];?>
 										</td>
 										<td>
-											<?php $tr=mysqli_query($con,"select * from tbl_shows where movie_id='".$movie['movie_id']."' and theatre_id='".$shw['theatre_id']."'");
+											<?php $tr=mysqli_query($con,"select * from tbl_shows where movie_id='".$movie['movie_id']."' and theatre_id='".$shw['theatre_id']."' and r_status = 1");
 											while($shh=mysqli_fetch_array($tr))
 											{
 												$ttm=mysqli_query($con,"select  * from tbl_show_time where st_id='".$shh['st_id']."'");
@@ -44,7 +44,7 @@
 												
 												?>
 												
-												<a href="check_login.php?show=<?php echo $shh['s_id'];?>&movie=<?php echo $shh['movie_id'];?>&theatre=<?php echo $shw['theatre_id'];?>"><button class="btn btn-default"><?php echo date('h:i A',strtotime($ttme['start_time']));?></button></a>
+												<a href="check_login.php?show=<?php echo $shh['s_id'];?>&movie=<?php echo $shh['movie_id'];?>&theatre=<?php echo $shw['theatre_id'];?>"><button class="btn btn-default"><?php echo date('H:i',strtotime($ttme['start_time']));?></button></a>
 												<?php
 											}
 											?>

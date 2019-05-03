@@ -27,7 +27,7 @@ include('header.php');
       </div>
         <div class="box-body">
           <?php
-            $th=mysqli_query($con,"select * from tbl_theatre where id_log='".$_GET['id']."'");
+            $th=mysqli_query($con,"select * from tbl_theatre where id='".$_GET['id']."'");
             $theatre=mysqli_fetch_array($th);
           ?>
             <table class="table table-bordered table-hover">
@@ -54,7 +54,7 @@ include('header.php');
             </table>
         </div> 
         <!-- /.box-footer-->
-      </div>
+      
          <div class="box">
          <div class="box-header with-border">
               <h3 class="box-title">Caractéristiques des Salles</h3>
@@ -86,9 +86,9 @@ include('header.php');
                       $st=mysqli_query($con,"select * from tbl_show_time where screen_id='".$screen['screen_id']."'");
                     ?>
                     <td><?php if(mysqli_num_rows($st)) { while($stm=mysqli_fetch_array($st))
-                    { echo date('h:i a',strtotime($stm['start_time']))." ,";}}
+                    { echo date('H:i',strtotime($stm['start_time']))." ,";}}
                     else
-                    {echo "No Show Time Added";}
+                    {echo "Pas d'horaire";}
                     ?></td>
                     <td class="text-right"><button data-toggle="modal" data-id="<?php echo $screen['screen_id'];?>" data-target="#view-modal2" id="getUser2" class="btn btn-sm btn-warning"><i class="fa fa-plus"></i> Ajouter une séance</button></td>
                   </tr>
