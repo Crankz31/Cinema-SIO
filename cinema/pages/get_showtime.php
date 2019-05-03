@@ -12,7 +12,7 @@
     }
     else {
         ?>
-        <option disabled>No Show time added in selected screen</option>
+        <option disabled>Aucun horaire ajouté</option>
         <?php
     }
     ?>

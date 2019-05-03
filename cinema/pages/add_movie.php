@@ -64,7 +64,6 @@ include('header.php');
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-success">Ajouter</button>
-              <?php echo $_SESSION['theatre'];?>
             </div>
           </form>
         </div>

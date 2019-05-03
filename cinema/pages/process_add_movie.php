@@ -14,6 +14,7 @@
     $rdate = utf8_decode(addslashes($rdate)); 
     $description = utf8_decode(addslashes($description));
     $flname = utf8_decode(addslashes($flname));
+    $video = utf8_decode(addslashes($video));
     $tid = $_SESSION['theatre'];
     mysqli_query($con,"insert into  tbl_movie (t_id,movie_name,cast,description,release_date,image,video_url,status) values('$tid','$name','$cast','$description','$rdate','$flname','$video',0)");
     
