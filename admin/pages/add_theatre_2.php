@@ -82,6 +82,7 @@ include('header.php');
                     <td><?php echo $screen['screen_name'];?></td>
                     <td><?php echo $screen['seats'];?></td>
                     <td><?php echo $screen['charge'];?></td>
+                    
                     <?php 
                       $st=mysqli_query($con,"select * from tbl_show_time where screen_id='".$screen['screen_id']."'");
                     ?>
