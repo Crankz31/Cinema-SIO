@@ -79,11 +79,6 @@ include('../../msgbox.php');
                     <td><?php echo $screen['seats'];?></td>
                     <td><?php echo $screen['charge'];?></td>
                     <?php 
-                    $ch = mysqli_query($con, "select * from tbl_show_time where screen_id = 1 and name = 'Après-midi' and start_time = '15:00:00'");
-                    $ch2 = mysqli_num_rows($ch);
-                    ?>
-                    <td><?php echo "nb :". $ch2. ".";?></td>
-                    <?php 
                       $st=mysqli_query($con,"select * from tbl_show_time where screen_id='".$screen['screen_id']."'");
                     ?>
                     <td><?php if(mysqli_num_rows($st)) { while($stm=mysqli_fetch_array($st))
