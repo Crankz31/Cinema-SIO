@@ -19,7 +19,7 @@
 						  		<a href="about.php?id=<?php echo $m['movie_id'];?>"><img height=300 src="<?php echo $m['image'];?>" alt="" /></a>
 						  	</div>
 						  	<div class="movie-text">
-						  		<h4 class="h-text"><a href="about.php?id=<?php echo $m['movie_id'];?>"><?php echo $m['movie_name'];?></a></h4>
+						  		<h4 class="h-text"><a href="about.php?id=<?php echo $m['movie_id'];?>"><?php echo utf8_encode($m['movie_name']);?></a></h4>
 						  		Acteurs:<Span class="color2"><?php echo $m['cast'];?></span><br>
 						  		
 						  	</div>

@@ -51,7 +51,7 @@ include('header.php');
 					
 						<div class="listimg1">
 							 <a target="_blank" href="<?php echo $nm['video_url'];?>"><img src="<?php echo $nm['image'];?>" alt=""/></a>
-							 <a target="_blank" href="<?php echo $nm['video_url'];?>" class="link"><?php echo $nm['movie_name'];?></a>
+							 <a target="_blank" href="<?php echo $nm['video_url'];?>" class="link"><?php echo utf8_encode($nm['movie_name']);?></a>
 						</div>
 						<?php
 					}
