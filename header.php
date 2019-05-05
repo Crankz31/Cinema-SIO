@@ -37,7 +37,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="contact.php">Contact</a></li>
 			  			<li><?php if(isset($_SESSION['user'])){
 			  			$us=mysqli_query($con,"select * from tbl_registration where user_id='".$_SESSION['user']."'");
-						$user=mysqli_fetch_array($us);?><a href="profile.php"><?php echo $user['name'];?></a><a href="logout.php">Se déconnecter</a><?php }else{?><a href="login.php">Se connecter</a><?php }?></li>
+						$user=mysqli_fetch_array($us);?><a href="profile.php"><?php echo $user['name'];?></a></li>
+						<li><a href="logout.php">Se déconnecter</a><?php }else{?><a href="login.php">Se connecter</a><?php }?></li>
 			        </ul>
 				</nav>
 			
