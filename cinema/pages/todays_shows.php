@@ -66,7 +66,7 @@ include('header.php');
                     <?php echo date('H:i ',strtotime($show_time['start_time']))." ( ".utf8_encode($show_time['name'])." ) ";?>
                   </td>
                   <td>
-                    <?php echo $movie['movie_name'];?>
+                    <?php echo utf8_encode($movie['movie_name']);?>
                   </td>
                 </tr>
                 <?php

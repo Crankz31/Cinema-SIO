@@ -41,7 +41,7 @@ include('header.php');
                   while($movie=mysqli_fetch_array($mv))
                   {
                     ?>
-                    <option value="<?php echo $movie['movie_id'];?>"><?php echo $movie['movie_name']; ?></option>
+                    <option value="<?php echo $movie['movie_id'];?>"><?php echo utf8_encode($movie['movie_name']); ?></option>
                     <?php
                   }
                 ?>

@@ -49,7 +49,7 @@ include('header.php');
                 <tr>
                   <td><span class="badge bg-green"><?php echo $scn['screen_name'];?></span></td>
                   <td><span class="badge bg-light-blue"><?php echo $scr['start_time'];?>(<?php echo utf8_encode($scr['name']);?>)</span></td>
-                  <td><?php echo $mov['movie_name'];?></td>
+                  <td><?php echo utf8_encode($mov['movie_name']);?></td>
                   </tr>
                   <?php
 
