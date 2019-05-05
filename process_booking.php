@@ -20,7 +20,7 @@ if(!isset($_SESSION['user']))
 			<form action="bank.php" method="post" id="form1">
 			<div class="col-md-4 col-md-offset-4" style="margin-bottom:50px">
 			<div class="form-group">
-   <label class="control-label">Nom de paiement</label>
+   <label class="control-label">Nom du propriétaire</label>
     <input type="text" class="form-control" name="name">
 </div>
 <div class="form-group">

@@ -1,6 +1,6 @@
 <?php
     $host = "127.0.0.1";
-    $user = "root";                     //Your Cloud 9 username
+    $user = "root";                     //Username
     $pass = "";                                  //Remember, there is NO password by default!
     $db = "sio_cinema";                                  //Your database name you want to connect to
     $port = 3306;

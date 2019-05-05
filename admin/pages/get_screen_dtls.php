@@ -25,9 +25,9 @@
               $st=mysqli_query($con,"select * from tbl_show_time where screen_id='".$screen['screen_id']."'");
             ?>
             <td><?php if(mysqli_num_rows($st)) { while($stm=mysqli_fetch_array($st))
-            { echo date('h:i a',strtotime($stm['start_time']))." ,";}}
+            { echo date('H:i ',strtotime($stm['start_time']))." ,";}}
             else
-            {echo "No Show Time Added";}
+            {echo "Aucune séance ajouté";}
             ?></td>
             <td class="text-right"><button data-toggle="modal" data-id="<?php echo $screen['screen_id'];?>" data-target="#view-modal2" id="getUser2" class="btn btn-sm btn-warning"><i class="fa fa-plus"></i> Ajouter une séance</button></td>
           </tr>
@@ -41,7 +41,7 @@
     else
     {
       ?>
-      <button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Add Screen</button>
+      <button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Ajouter un écran</button>
       <?php
     }
     ?>

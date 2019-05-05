@@ -73,7 +73,7 @@ if(!isset($_SESSION['user']))
 									}
 									else
 									{?>
-									<a href="cancel.php?id=<?php echo $bkg['book_id'];?>">Cancel</a>
+									<a href="cancel.php?id=<?php echo $bkg['book_id'];?>">Annuler</a>
 									<?php
 									}
 									?>
@@ -88,7 +88,7 @@ if(!isset($_SESSION['user']))
 				else
 				{
 					?>
-					<h3>No Previous Bookings</h3>
+					<h3>Aucune Réservation</h3>
 					<?php
 				}
 				?>

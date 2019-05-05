@@ -8,7 +8,7 @@
 				  <div class="panel-heading">Identification</div>
 				  <div class="panel-body">
 				  	<?php include('msgbox.php');?>
-				<p class="login-box-msg">Connectez-vous pour réserver votre session</p>
+				<p class="login-box-msg">Connectez-vous pour réserver vos places</p>
 				<form action="process_login.php" method="post">
       <div class="form-group has-feedback">
         <input name="Email" type="text" size="25" placeholder="Email" class="form-control" placeholder="Email"/>

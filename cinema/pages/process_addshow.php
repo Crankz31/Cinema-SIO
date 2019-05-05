@@ -11,7 +11,7 @@
     {
         mysqli_query($con,"insert into  tbl_shows values(NULL,'$time','$tid','$movie','$sdate','1','0')");
     }
-    $_SESSION['success']="Show Added";
+    $_SESSION['success']="Séance Ajouté !";
     header('location:add_show.php');
     ?>
     

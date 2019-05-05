@@ -34,31 +34,3 @@
 	</div>
 </body>
 </html>
-
-<style>
-.content {
-	padding-bottom:0px !important;
-}
-#form111 {
-                width:500px;
-                margin:50px auto;
-}
-#search111{
-                padding:8px 15px;
-                background-color:#fff;
-                border:0px solid #dbdbdb;
-}
-#button111 {
-                position:relative;
-                padding:6px 15px;
-                left:-8px;
-                border:2px solid #207cca;
-                background-color:#207cca;
-                color:#fafafa;
-}
-#button111:hover  {
-                background-color:#fafafa;
-                color:#207cca;
-}
-
-</style>

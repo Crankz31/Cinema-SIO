@@ -70,7 +70,7 @@ include('header.php');
               <th class="col-md-3">Nom de la salle</th>
               <th class="col-md-1">Sièges</th>
               <th class="col-md-1">Prix</th>
-              <th class="col-md-3">Heure du film</th>
+              <th class="col-md-3">Horaire</th>
               <th class="text-right col-md-3"><button data-toggle="modal" data-target="#view-modal" id="getUser" class="btn btn-sm btn-info"><i class="fa fa-plus"></i> Ajouter une Salle</button></th>
                 <?php 
                 $sl=1;
@@ -89,7 +89,7 @@ include('header.php');
                     <td><?php if(mysqli_num_rows($st)) { while($stm=mysqli_fetch_array($st))
                     { echo date('H:i',strtotime($stm['start_time']))." ,";}}
                     else
-                    {echo "Pas d'horaire";}
+                    {echo "Pas d'horaire ajouté";}
                     ?></td>
                     <td class="text-right"><button data-toggle="modal" data-id="<?php echo $screen['screen_id'];?>" data-target="#view-modal2" id="getUser2" class="btn btn-sm btn-warning"><i class="fa fa-plus"></i> Ajouter une séance</button></td>
                   </tr>
@@ -145,27 +145,27 @@ include('header.php');
                        <div class="modal-header"> 
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">
-                            	<i class="fa fa-plus"></i> Ajouter un film
+                            	<i class="fa fa-plus"></i> Ajouter un créneaux horaire
                             </h4> 
                        </div> 
                        <div class="modal-body"> 
                            <div class="form-group">
-                       	     <label class="control-label">Selectionner un Film</label>
+                       	     <label class="control-label">Selectionner un créneaux horaire</label>
                        	     <select name="s_name" id="s_name" class="form-control">
-                       	       <option value="0">Select </option>
-                       	       <option>Noon</option>
-                       	       <option>Matinee</option>
-                       	       <option>First</option>
-                       	       <option>Second</option>
-                       	       <option>Others</option>
+                       	       <option value="0">Selectionner un créneaux horaire </option>
+                       	       <option>Matin</option>
+                       	       <option>Dejeuner</option>
+                       	       <option>Après-midi</option>
+                       	       <option>Soirée</option>
+                       	       <option>Autres</option>
                        	     </select>
                        	   </div>
                        	   <div class="form-group">
-                       	     <label class="control-label">Heure de commencement du film</label>
+                       	     <label class="control-label">Heure de début de la séance</label>
                        	     <input type="time" id="s_time" class="form-control"/>
                        	   </div>
                        	   <div class="form-group">
-                            <button class="btn btn-success" id="savetime">Sauvegarde</button>
+                            <button class="btn btn-success" id="savetime">Enregistrer</button>
                           </div>
                         </div> 
                         <div class="modal-footer"> 

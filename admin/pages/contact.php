@@ -46,7 +46,6 @@ include('header.php');
                 Message
             </th>
         <?php
-    $sl=1;
     include('../../config.php');
     $res=mysqli_query($con,"select * from tbl_contact");    
         ?>
@@ -60,15 +59,6 @@ include('header.php');
         </tr>
         <?php endwhile; ?>
     </table>
-<script>
-function del(m)
-    {
-        if (confirm("Etes vous sur de vouloir supprimer ce film?") == true) 
-        {
-            window.location="process_delete_movie.php?mid="+m;
-        } 
-    }
-    </script>
     </div> 
         <!-- /.box-footer-->
       </div>
