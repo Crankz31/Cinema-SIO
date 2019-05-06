@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 16 avr. 2019 à 09:52
--- Version du serveur :  5.7.23
--- Version de PHP :  7.2.10
+-- Généré le :  lun. 06 mai 2019 à 06:27
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,7 +46,14 @@ CREATE TABLE IF NOT EXISTS `tbl_bookings` (
   KEY `user_id` (`user_id`),
   KEY `show_id` (`show_id`),
   KEY `screen_id` (`screen_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `tbl_bookings`
+--
+
+INSERT INTO `tbl_bookings` (`book_id`, `ticket_id`, `t_id`, `user_id`, `show_id`, `screen_id`, `no_seats`, `amount`, `ticket_date`, `date`, `status`) VALUES
+(1, 117, 1, 2, 2, 1, 4, 8, '2019-05-09', '2019-05-05', 1);
 
 -- --------------------------------------------------------
 
@@ -62,7 +69,17 @@ CREATE TABLE IF NOT EXISTS `tbl_contact` (
   `mobile` int(11) NOT NULL,
   `subject` varchar(1000) NOT NULL,
   PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `tbl_contact`
+--
+
+INSERT INTO `tbl_contact` (`contact_id`, `name`, `email`, `mobile`, `subject`) VALUES
+(1, 'pierre', 'pierre@gmail.com', 635363412, 'J adore votre cinema'),
+(2, 'Gregoire Bisso', 'gregoire.bisso@gmail.com', 635508881, ' Salutation'),
+(3, 'Pierre', 'pierre@gmail.com', 525262785, ' Test'),
+(4, 'jack', 'jack@gmail.com', 525263333, ' Bonjour');
 
 -- --------------------------------------------------------
 
@@ -73,25 +90,23 @@ CREATE TABLE IF NOT EXISTS `tbl_contact` (
 DROP TABLE IF EXISTS `tbl_login`;
 CREATE TABLE IF NOT EXISTS `tbl_login` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `username` varchar(100) NOT NULL COMMENT 'email',
   `password` varchar(100) NOT NULL,
   `user_type` int(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_login`
 --
 
 INSERT INTO `tbl_login` (`id`, `user_id`, `username`, `password`, `user_type`) VALUES
-(1, 1, 'admin', 'password', 0),
-(2, 5, 'theatre', 'password', 1),
-(3, 6, 'theatre2', 'password', 1),
-(12, 2, 'rahulreghunath11@gmail.com', 'rahul', 2),
-(16, 3, 'vishnut300@gmail.com', 'vishnut300', 2),
-(17, 4, 'Patrick@gmail.com', 'password', 2);
+(1, NULL, 'admin', 'password', 0),
+(2, 1, 'dupont@gmail.com', 'password', 2),
+(3, 2, 'pierre@gmail.com', 'password', 2),
+(4, NULL, 'GOB1', 'password', 1);
 
 -- --------------------------------------------------------
 
@@ -112,17 +127,15 @@ CREATE TABLE IF NOT EXISTS `tbl_movie` (
   `status` int(1) NOT NULL COMMENT '0 means active',
   PRIMARY KEY (`movie_id`),
   KEY `t_id` (`t_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_movie`
 --
 
 INSERT INTO `tbl_movie` (`movie_id`, `t_id`, `movie_name`, `cast`, `description`, `release_date`, `image`, `video_url`, `status`) VALUES
-(1, 3, 'Arnold le magnifque', 'Arnold Schwarzenegger', 'Ce film suit la progression d\'Arnold Schwarzenegger vers son 6e titre de Mr. Olympia, à 28 ans.', '2018-01-01', 'images/arnold_le_magnifique_poster.jpg', 'https://www.youtube.com/watch?v=rq45GnjuIlE', 0),
-(2, 4, 'Coach Carter', 'Samuel L. Jackson', 'L\'histoire vraie de Ken Carter, l\'entraîneur de basket d\'une &eacutequipe de basket-ball de lyc&eacutee, qui devint c&eacutelèbre en 1999 après avoir renvoy&eacute ses joueurs à leurs chères &eacutetudes, d&eacuteclarant forfait 2 matchs de suite alors que l\'&eacutequipe &eacutetait invaincue, parce que ces derniers n\'avaient pas obtenu des r&eacutesultats scolaires suffisants.', '2018-05-12', 'images/coach_carter_poster.jpg', 'https://www.youtube.com/watch?v=znyAnWUYf2g', 0),
-(3, 3, 'Creed', 'Sylvester Stalone, Michael B. Jordan', 'Adonis Johnson n\'a jamais connu son père, le c&eacutelèbre champion du monde poids lourd Apollo Creed d&eacutec&eacuted&eacute avant sa naissance. Pourtant, il a la boxe dans le sang et d&eacutecide d\'être entraîn&eacute par le meilleur de sa cat&eacutegorie. À Philadelphie, il retrouve la trace de Rocky Balboa, que son père avait affront&eacute autrefois, et lui demande de devenir son entraîneur. D\'abord r&eacuteticent, l\'ancien champion d&eacutecèle une force in&eacutebranlable chez Adonis et finit par accepter', '2015-05-12', 'images/creed_poster.jpg', 'https://www.youtube.com/watch?v=Uv554B7YHk4', 0),
-(5, 3, 'Invictus', 'Morgan Freeman, Matt Demon', 'En 1995, l\'Afrique du Sud organise la coupe du monde de rugby à XV. Nelson Mandela commence son mandat en tant que président du pays. Contre l\'opinion de ses partisans, il sent dans l\'événement sportif la possibilité de créer un sentiment d\'union nationale derrière l\'équipe des Springboks, symbole durant plusieurs décennies des Blancs d\'Afrique du Sud, de leur domination et de l\'apartheid (1948-1991). « One team, one country » (« une équipe, un pays »).', '2017-05-12', 'images/invictus_poster.jpg', 'https://www.youtube.com/watch?v=Vhl2Zl_QQhE', 0);
+(1, 1, 'De l\'ombre à la lumière', 'Russell Crowe Renee Zellweger Paul Giamatti', 'Autrefois boxeur prometteur, Jim Braddock s\'est vu contraint d\'abandonner la compétition après une série de défaites. Alors que l\'Amérique sombre dans la Grande Dépression, Jim accepte n\'importe quel petit boulot pour faire vivre sa femme Mae et leurs enfants.', '2005-09-14', 'images/Ombre.jpg', 'https://www.youtube.com/watch?v=uaT0nB5EWuY', 0),
+(2, 1, 'Le Grand Bain', 'Mathieu Amalric, Guillaume Canet, Benoit Poelvoorde', 'C\'est dans les couloirs de leur piscine municipale que Bertrand, Marcus, Simon, Laurent, Thierry et les autres s\'entraînent sous l\'autorité toute relative de Delphine, ancienne gloire des bassins. Ensemble, ils se sentent libres et utiles.', '2018-10-24', 'images/Grandbain.jpg', 'https://www.youtube.com/watch?v=YXmLl2brv6s', 0);
 
 -- --------------------------------------------------------
 
@@ -146,9 +159,9 @@ CREATE TABLE IF NOT EXISTS `tbl_news` (
 --
 
 INSERT INTO `tbl_news` (`news_id`, `name`, `cast`, `news_date`, `description`, `attachment`) VALUES
-(1, 'The Art Of Flight', 'Travis Rice', '2019-04-18', 'A mi-chemin entre le documentaire et le road movie, \"The Art of Flight\" se centre sur Travis Rice, véritable légende du snowboard, et ses amis, repoussant sans cesse les limites des sports extrêmes dans les contrées les plus reculées et les plus dangereuses du monde.', 'news_images/the_art_of_flight_poster.jpg'),
-(2, 'Million Dollar Baby', 'Clint Estawood, Morgan Freeman', '2019-06-01', 'Rejeté depuis longtemps par sa fille, l entraîneur Frankie Dunn s est replié sur lui-même et vit dans un désert affectif, en évitant toute relation qui pourrait accroître sa douleur et sa culpabilité.', 'news_images/million_dollar_baby_poster.jpg'),
-(3, 'Tyson', 'Mike Tyson', '2019-10-05', 'A travers des images d archives et son témoignage, Mike Tyson retrace sa carrière. L athlète controversé revient sur son enfance difficile et son ascension professionnelle qui fera de lui le plus grand champion poids lourds de l Histoire de la boxe...', 'news_images/tyson_poster.jpg');
+(1, 'Million Dollar Baby', 'Clint Estawood, Morgan Freeman', '2005-05-23', 'Rejeté depuis longtemps par sa fille, l\'entraîneur Frankie Dunn s\'est replié sur lui-même et vit dans un désert affectif, en évitant toute relation qui pourrait accroître sa douleur et sa culpabilité.', 'news_images/MillionDollar.jpg'),
+(2, 'RASTA ROCKETT', 'Leon Robinson, Doug E. Doug, John Candy', '1993-04-13', 'L\'histoire véridique de quatre Jamaïcains qui ont un rêve fou : obtenir une médaille d\'or dans une discipline olympique qui leur est totalement inconnue et impossible à pratiquer chez eux : le bobsleigh !', 'news_images/Rasta.jpg'),
+(3, 'Fighter', 'Mark Wahlberg, Christian Bale, Amy Adams ', '2011-03-09', 'Micky Ward est un jeune boxeur dont la carrière stagne. Il va rencontrer Charlene, une femme au caractère bien trempé, qui va l\'aider à s\'affranchir de l\'influence négative de sa mère, qui gère maladroitement sa carrière, et de ses soeurs envahissantes.', 'news_images/fighter.jpg');
 
 -- --------------------------------------------------------
 
@@ -165,19 +178,15 @@ CREATE TABLE IF NOT EXISTS `tbl_registration` (
   `age` int(2) NOT NULL,
   `gender` varchar(10) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_registration`
 --
 
 INSERT INTO `tbl_registration` (`user_id`, `name`, `email`, `phone`, `age`, `gender`) VALUES
-(1, 'admin', 'admin', '0123456789', 23, 'gender'),
-(2, 'rahul', 'rahulreghunath11@gmail.com', '9037500119', 23, 'gender'),
-(3, 'vishnu', 'vishnut300@gmail.com', '8156820497', 22, 'gender'),
-(4, 'Patrick', 'Patrick@gmail.com', '9037500119', 18, 'gender'),
-(5, 'theatre', 'theatre', '0987456123', 22, 'gender'),
-(6, 'theatre2', 'theatre2', '0321789456', 18, 'gender');
+(1, 'Dupont', 'dupont@gmail.com', '0630303030', 30, 'gender'),
+(2, 'Pierre', 'pierre@gmail.com', '0525263231', 40, 'gender');
 
 -- --------------------------------------------------------
 
@@ -194,7 +203,15 @@ CREATE TABLE IF NOT EXISTS `tbl_screens` (
   `charge` int(11) NOT NULL COMMENT 'price ticket',
   PRIMARY KEY (`screen_id`),
   KEY `t_id` (`t_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `tbl_screens`
+--
+
+INSERT INTO `tbl_screens` (`screen_id`, `t_id`, `screen_name`, `seats`, `charge`) VALUES
+(1, 1, 'Salle1', 100, 2),
+(2, 1, 'Salle2 ', 120, 3);
 
 -- --------------------------------------------------------
 
@@ -215,7 +232,15 @@ CREATE TABLE IF NOT EXISTS `tbl_shows` (
   KEY `theatre_id` (`theatre_id`),
   KEY `st_id` (`st_id`),
   KEY `movie_id` (`movie_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `tbl_shows`
+--
+
+INSERT INTO `tbl_shows` (`s_id`, `st_id`, `theatre_id`, `movie_id`, `start_date`, `status`, `r_status`) VALUES
+(1, 2, 1, 1, '2019-05-14', 1, 1),
+(2, 3, 1, 2, '2019-05-10', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -231,7 +256,19 @@ CREATE TABLE IF NOT EXISTS `tbl_show_time` (
   `start_time` time NOT NULL,
   PRIMARY KEY (`st_id`),
   KEY `screen_id` (`screen_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `tbl_show_time`
+--
+
+INSERT INTO `tbl_show_time` (`st_id`, `screen_id`, `name`, `start_time`) VALUES
+(1, 1, 'Matin', '08:00:00'),
+(2, 1, 'Après-midi', '14:00:00'),
+(3, 1, 'Soirée', '20:00:00'),
+(4, 2, 'Matin', '10:00:00'),
+(5, 2, 'Après-midi', '15:00:00'),
+(6, 2, 'Soirée', '22:00:00');
 
 -- --------------------------------------------------------
 
@@ -247,16 +284,17 @@ CREATE TABLE IF NOT EXISTS `tbl_theatre` (
   `place` varchar(1000) NOT NULL,
   `state` varchar(1000) NOT NULL,
   `pin` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `id_log` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_log` (`id_log`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `tbl_theatre`
 --
 
-INSERT INTO `tbl_theatre` (`id`, `name`, `address`, `place`, `state`, `pin`) VALUES
-(3, 'GOB Centre', '2 Rue Georges Ledormeur', 'Tarbes', 'Occitanie', 65000),
-(4, 'GOB Gare', '14 Rue Victor Hugo', 'Tarbes', 'Occitanie', 65000);
+INSERT INTO `tbl_theatre` (`id`, `name`, `address`, `place`, `state`, `pin`, `id_log`) VALUES
+(1, 'GOB Tarbe', '7 rue de la gare', 'Tarbes, France', 'Hautes-PyrÃ©nÃ©es', 65000, 4);
 
 --
 -- Contraintes pour les tables déchargées
@@ -302,6 +340,12 @@ ALTER TABLE `tbl_shows`
 --
 ALTER TABLE `tbl_show_time`
   ADD CONSTRAINT `tbl_show_time_ibfk_1` FOREIGN KEY (`screen_id`) REFERENCES `tbl_screens` (`screen_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `tbl_theatre`
+--
+ALTER TABLE `tbl_theatre`
+  ADD CONSTRAINT `tbl_theatre_ibfk_1` FOREIGN KEY (`id_log`) REFERENCES `tbl_login` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
